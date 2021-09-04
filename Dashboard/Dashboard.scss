@@ -1,0 +1,94 @@
+$maincolor: yellowgreen;
+
+#row1{
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: $maincolor;
+    border-radius: 20px;
+    align-items: center;
+    
+    
+}
+#row1 h1{
+
+    font-weight: bold;
+}
+#row2{
+
+    margin-top: 10px;
+    display: -moz-inline-grid;
+    grid-auto-rows: 150px;
+    grid-gap: 10px;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+#row2 a{
+
+    background-color: rgb(236, 236, 236);
+    border-radius: 20px;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    transition: ease-in-out 0.7;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+#row2 a:hover{
+    background-color: $maincolor ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#row3  {
+
+    text-align: center;
+    margin-top: 30px;
+}
+#row4{
+
+    color: rgb(255, 0, 0);
+    padding-top: 10px;
+}
+#row5{
+
+    padding-top: 20px;
+}
+#form-table td th{
+
+    border: none;
+
+
+}
+#form-table td{
+
+    border: none;
+}
+
+#confirm-btn{
+
+    background-color: rgb(35, 155, 35);
+    padding: 5px 10px;
+    color: rgb(236, 236, 236);
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#clear-btn{
+
+    background-color: red;
+    margin-left: 7px;
+    padding: 5px 10px;
+    color: rgb(236, 236, 236);
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+table{
+    background-color: rgb(234, 253, 236);
+    border-radius: 10px;
+}

@@ -1,0 +1,158 @@
+// variables
+$primerycolor:white;
+$bannernoraml: 700px;
+$bannerresponsive : 500px;
+
+
+.banner{
+
+    background-image: url("./Images/madu-river.jpg");
+    width: 100%;
+    height: $bannernoraml;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    text-align: center;
+    
+
+}
+.name-logo h1{
+
+    color: $primerycolor;
+}
+.name-logo{
+
+    background-color: rgb(12, 136, 18);
+    padding: 5px;
+    text-align: center;
+
+
+}
+.name2{
+
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.name2 h2{
+
+    color: $primerycolor;
+}
+.footer{
+
+    background-color: rgb(30, 80, 15);
+    padding: 5px;
+    text-align: center;
+}
+.footer h3{
+
+    color: black;
+}
+
+.login{
+
+    width: 400px;
+    height: 500px;
+    background-color: rgb(253, 253, 253);
+    display: inline-block;
+    border-radius: 50px;
+    opacity: 0.8;
+    box-shadow: 5px 2px rgb(192, 240, 180);
+}
+.login h2{
+
+    color: rgb(53, 172, 16);
+    padding-top: 5px;
+}
+form{
+
+    padding-top: 50px;
+    opacity: 1;
+}
+form input{
+
+    width: 75%;
+    height: 40px;
+    border-radius: 15px;
+    outline: none;
+    padding: 8px;
+    font-weight: bold;
+    border-color: rgb(16, 212, 104);
+    border-width: 3px;
+}
+form button{
+
+    margin-top: 30px;
+    width: 35%;
+    padding: 3px;
+    background-color:transparent;
+    color: black;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+    height: 40px;
+    border-color: rgb(7, 7, 7);
+    transition: ease-in-out 0.7;
+   
+}
+form button:hover{
+
+    background-color: rgb(16, 212, 104);
+}
+
+
+.icons{
+
+margin-top: 40px;
+}
+.icons a{
+
+    font-size: 40px;
+    margin-left: 15px;
+}
+
+
+form h5{
+
+    color: rgb(105, 23, 23);
+}
+
+
+
+// responsive
+
+@media( max-width: 800px) {
+
+
+.banner{
+
+        background-image: none;
+        width: 100%;
+        height: $bannerresponsive;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    
+}
+.login{
+
+    width: 300px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    
+}
+
+.icons{
+
+    margin-top: 20px;
+    }
+
+    .icons a{
+
+        font-size: 25px;
+        margin-left: 10px;
+    }
+
+}
