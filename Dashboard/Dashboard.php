@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Dashboard.css?v=<?php echo time(); ?> ">
-    <script src="./Dashboard.js"></script>
+    <script src="./Dashboard.js?v=<?php echo time(); ?>" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/7c77a89f23.js"></script>
     <title>Dashboard</title>
@@ -85,11 +85,11 @@
                 </tr>
                 <tr>
                     <td><h5>Passagers</h5></td>
-                    <td><h5>Adult : <input type="number" name="" id="" required min="0" max="100"></td>
+                    <td><h5>Adult : <input type="number" name="" id="adult" required min="0" max="100" placeholder="0"></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><h5>Child : <input type="number" name="" id="" min="0" max="20"></td>
+                    <td><h5>Child : <input type="number" name="child" id="child" min="0" max="20" placeholder="0"></td>
                 </tr>
                 <tr>
                     <td><h5>Location</h5></td>
@@ -112,17 +112,34 @@
                 </tr>
                 <tr>
                     <td><h5>Meals</h5></td>
-                    <td><h5>: Yes <input type="checkbox" name="" id="" value="Yes"></h5></td>
+                    <td><h5>: Yes <input type="checkbox" name="" id="meal" value="Yes"></h5></td>
                 </tr>
                 <tr>
-                    <td>
+                    <td >
+                        <tr>
+                            <td><p id="ad"></p></td>
+                            <td><p id="ad-cost"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="chi-pass-co"></p></td>
+                            <td><p id="chi-cost"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="pass-meal-co"></p></td>
+                            <td><p id="meal-cost"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="tot-pass-cost"></p></td>
+                            <td><p id="total-cost"></p></td>
+                        </tr>
+
                     
                     </td>
 
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" id="clear-btn"> </td>
+                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" id="clear-btn"> </td>
                 </tr>
 
             
