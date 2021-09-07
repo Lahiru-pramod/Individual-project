@@ -97,6 +97,18 @@
   cursor: pointer;
 }
 
+#cost-btn:focus {
+  background-color: rgba(176, 182, 134, 0.966);
+}
+
+#clear-btn:focus {
+  background-color: #e68282;
+}
+
+#confirm-btn:focus {
+  background-color: #73c273;
+}
+
 table {
   background-color: #eaffec;
   border-radius: 10px;
@@ -104,5 +116,11 @@ table {
 
 #total-cost {
   color: red;
+}
+
+#ad-cost, #chi-cost, #meal-cost, #total-cost {
+  outline: none;
+  background-color: #eaffec;
+  border: none;
 }
 /*# sourceMappingURL=Dashboard.css.map */

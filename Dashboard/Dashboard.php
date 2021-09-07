@@ -1,6 +1,75 @@
 <?php session_start(); ?>
 <?php require_once('../DBconnection/connection.php'); ?>
 <?php require_once('../DBconnection/functions.php'); ?>
+<?php
+
+if(isset($_POST['submit'])){
+
+    // $orderer= $_POST['orderer'];
+    // $ordID = $_POST['orderid'];
+    // $bookdate =$_POST['bookingdate'];
+    // $booking = $_POST['bookingtime'];
+    // $adult= $_POST['adult'];
+    // $child=$_POST['child'];
+    // $location=$_POST['location'];
+    // $Address=$_POST['Address'];
+    // $contact=$_POST['contact'];
+    // $email=$_POST['email'];
+    // $meal=$_POST['meal'];
+    // $adcost=$_POST['adcost'];
+    // $chicost=$_POST['chicost'];
+    // $mealcost=$_POST['mealcost'];
+    // $totalcost=$_POST['totalcost'];
+
+    $orderer = mysqli_real_escape_string($connection, $_POST['orderer']);
+    $ordID = mysqli_real_escape_string($connection, $_POST['orderid']);
+    $bookdate = mysqli_real_escape_string($connection, $_POST['bookingdate']);
+    $booking = mysqli_real_escape_string($connection, $_POST['bookingtime']);
+    $adult = mysqli_real_escape_string($connection, $_POST['adult']);
+    $child = mysqli_real_escape_string($connection, $_POST['child']);
+    $location = mysqli_real_escape_string($connection, $_POST['location']);
+    $Address = mysqli_real_escape_string($connection, $_POST['Address']);
+    $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $meal = mysqli_real_escape_string($connection, $_POST['meal']);
+    $adcost = mysqli_real_escape_string($connection, $_POST['adcost']);
+    $chicost = mysqli_real_escape_string($connection, $_POST['chicost']);
+    $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
+    $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
+
+    $query= "INSERT INTO bills (";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
+    $query .= ") VALUES (";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
+    $query .= ")";
+
+    $result = mysqli_query($connection, $query);
+     if ($result){
+// if successful
+     echo'<script> alert("Bill is successfully Added!");
+             </script>';
+
+     }else{
+
+        echo'<script> alert("Process is Falied, Please try again")</script>';
+
+
+     }
+
+
+
+      
+}
+
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,29 +132,29 @@
 
       <div class="row" id="row5">
 
-         <form action="#">
+         <form action="Dashboard.php" method="POST" enctype="multipart/form-data">
 
                 <table class="table" id="form-table">
 
                 <tr>
                     <td><h5>Orderer name</h5></td>
-                    <td><h5>: <input type="text" name="" id="" required></h5></td>
+                    <td><h5>: <input type="text" name="orderer" id="" required  ></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Orderer NIC no.</h5></td>
-                    <td><h5>: <input type="text" name="" id="" required></h5></td>
+                    <td><h5>: <input type="text" name="orderid" id="" required ></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Booking date</h5></td>
-                    <td><h5>: <input type="date" name="" id="" required></h5></td>
+                    <td><h5>: <input type="date" name="bookingdate" id="" required ></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Booking time</h5></td>
-                    <td><h5>: <input type="time" name="" id="" required></h5></td>
+                    <td><h5>: <input type="time" name="bookingtime" id="" required ></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Passagers</h5></td>
-                    <td><h5>Adult : <input type="number" name="" id="adult" required min="0" max="100" placeholder="0"></td>
+                    <td><h5>Adult : <input type="number"   name="adult" id="adult" required min="0" max="100" placeholder="0"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -93,54 +162,59 @@
                 </tr>
                 <tr>
                     <td><h5>Location</h5></td>
-                    <td><h5>: <select id="location" name="location">
+                    <td><h5>: <select id="location" name="location" >
                             <option value="Madu">Madu river safari - Balapitiya</option>
                             
                             </select></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Address</h5></td>
-                    <td><h5>: <input type="text" name="" id="" required></h5></td>
+                    <td><h5>: <input type="text" name="Address" id=""   required></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Contact no</h5></td>
-                    <td><h5>: <input type="text" name="" id="" required></h5></td>
+                    <td><h5>: <input type="text" name="contact" id=""   required></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Email Address</h5></td>
-                    <td><h5>: <input type="text" name="" id="" required></h5></td>
+                    <td><h5>: <input type="text" name="email" id=""  required></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Meals</h5></td>
-                    <td><h5>: Yes <input type="checkbox" name="" id="meal" value="Yes"></h5></td>
+                    <td>:<select id="meal" name="meal" >
+                            <option value="select" selected>Choose...</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                            </select></td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" id="clear-btn"> </td>
                 </tr>
                 <tr>
                     <td >
                         <tr>
                             <td><p id="ad"></p></td>
-                            <td><p id="ad-cost"></p></td>
+                            <td><input type="text" name="adcost" id="ad-cost"  ></td>
                         </tr>
                         <tr>
                             <td><p id="chi-pass-co"></p></td>
-                            <td><p id="chi-cost"></p></td>
+                            <td><input type="text" name="chicost" id="chi-cost"  ></td>
                         </tr>
                         <tr>
                             <td><p id="pass-meal-co"></p></td>
-                            <td><p id="meal-cost"></p></td>
+                            <td><input type="text" name="mealcost" id="meal-cost"  ></td>
                         </tr>
                         <tr>
                             <td><p id="tot-pass-cost"></p></td>
-                            <td><p id="total-cost"></p></td>
+                            <td><input type="text" name="totalcost" id="total-cost" ></td>
                         </tr>
 
                     
                     </td>
 
                 </tr>
-                <tr>
-                    <td></td>
-                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" id="clear-btn"> </td>
-                </tr>
+
 
             
 
