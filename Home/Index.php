@@ -22,7 +22,7 @@
                 if (mysqli_num_rows($result_set) == 1){
 
 
-                   header('Location:../Dashboard/Dashboard.php');
+                   header('Location:../main-panel/main-panel.php');
                 }else{
 
                     echo '<script> alert("Invalid Email or Password")</script>';
