@@ -110,8 +110,9 @@
   text-align: center;
   margin-top: 0px;
   background-color: black;
-  color: white;
+  color: #cac6c6;
   padding-top: 60px;
+  border-radius: 25px;
 }
 
 #row4 {
@@ -122,6 +123,19 @@
 
 #row5 {
   padding-top: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-gap: 30px;
+}
+
+#row5 #row5-col2 h3 {
+  margin-left: 10px;
+  text-align: center;
+}
+
+#form-menu {
+  width: 800px;
 }
 
 #form-table td th {
@@ -130,6 +144,10 @@
 
 #form-table td {
   border: none;
+}
+
+#bill-form-td {
+  width: 200px;
 }
 
 #confirm-btn {
@@ -177,7 +195,7 @@
 }
 
 table {
-  background-color: #eaffec;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -187,8 +205,33 @@ table {
 
 #ad-cost, #chi-cost, #meal-cost, #total-cost {
   outline: none;
-  background-color: #eaffec;
+  background-color: white;
   border: none;
+}
+
+#form-menu {
+  padding: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 600px;
+}
+
+#bill-search-button {
+  padding: 3px 25px;
+  background-color: #6969f3;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+#details-btn {
+  padding: 3px 15px;
+  background-color: #e487ec;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
 }
 
 @media screen and (max-height: 450px) {

@@ -189,7 +189,12 @@ if(isset($_POST['submit'])){
 
 
 
-    <div class="container-xxl">
+      <!-- body part -->
+
+
+
+
+    <div class="container">
     <div class="row fixed-top" id="row1">
             <div class="col-8" id="col1">
                 <h3><i class="fas fa-anchor"></i> Captain Cruise</h3>
@@ -206,14 +211,17 @@ if(isset($_POST['submit'])){
           <h4>*Create a new bill</h4>
       </div>
 
-      <div class="row" id="row5">
+      <!-- bill form -->
 
-         <form action="billing.php" method="POST" enctype="multipart/form-data">
+      <div class="row" id="row5">
+          <div class="col">
+
+         <form action="billing.php" method="POST" enctype="multipart/form-data" id="form-menu">
 
                 <table class="table" id="form-table">
 
                 <tr>
-                    <td><h5>Orderer name</h5></td>
+                    <td id="bill-form-td"><h5>Orderer name</h5></td>
                     <td><h5>: <input type="text" name="orderer" id="" required  ></h5></td>
                 </tr>
                 <tr>
@@ -297,8 +305,51 @@ if(isset($_POST['submit'])){
 
                 </table>
                 
-        </form>   
+        </form> 
+</div>
+<div class="col" id="row5-col2">
+   <h3>All Bills Details Section</h3>
+   <div class="search-container">
+    <form action="#">
+        <h5>Enter the Orderer id no:</h5>
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit" id="bill-search-button"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <!-- Bill details table -->
+
+  <table class="table" id="Bill-table">
+      <tr>
+          <th>Bill ID</th>
+          <th>Orderer ID</th>
+          <th>Date</th>
+          <th>status</th>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>132456432v</td>
+          <td>2021/05/31</td>
+          <td><input type="button" value="Details" id="details-btn"></td>
+      </tr>
+  </table>
+
+
+
+  
+</div>  
      </div>
+     <!-- Bill form END -->
+
+
+
+
+
+
+
+
+
+
 
 
 

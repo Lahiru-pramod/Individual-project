@@ -15,7 +15,7 @@ $maincolor: yellowgreen;
   }
   
   .sidenav a {
-    padding-left: 20px  ;
+     padding-left: 20px  ;
     padding-top: 8px;
     padding-bottom: 8px;
     text-decoration: none;
@@ -108,8 +108,9 @@ $maincolor: yellowgreen;
     text-align: center;
     margin-top: 0px;
     background-color: rgb(0, 0, 0) ;
-    color: white;
+    color: rgb(202, 198, 198);
     padding-top: 60px;
+    border-radius: 25px;
 
     
 }
@@ -122,6 +123,18 @@ $maincolor: yellowgreen;
 #row5{
 
     padding-top: 20px;
+    justify-content: center;
+    grid-gap: 30px;
+    
+}
+#row5 #row5-col2 h3{
+
+    margin-left: 10px;
+    text-align: center;
+}
+#form-menu{
+
+    width: 800px;
 }
 #form-table td th{
 
@@ -132,6 +145,10 @@ $maincolor: yellowgreen;
 #form-table td{
 
     border: none;
+}
+#bill-form-td{
+
+    width: 200px;
 }
 
 #confirm-btn{
@@ -181,7 +198,7 @@ background-color:rgb(115, 194, 115);
 
 
 table{
-    background-color: rgb(234, 255, 236);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
 
@@ -194,8 +211,36 @@ table{
 #ad-cost , #chi-cost , #meal-cost , #total-cost{
 
     outline: none;
-    background-color: rgb(234, 255, 236);
+    background-color: rgb(255, 255, 255);
     border: none;
+}
+#form-menu{
+
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 600px;
+}
+
+// Search section
+
+#bill-search-button{
+
+    padding: 3px 25px;
+    background-color: rgb(105, 105, 243);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+#details-btn{
+
+    padding: 3px 15px;
+    background-color: rgb(228, 135, 236);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    
 }
 
  
@@ -203,3 +248,5 @@ table{
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  
