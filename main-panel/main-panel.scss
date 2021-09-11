@@ -13,17 +13,18 @@
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding-left: 20px  ;
+    padding-top: 8px;
+    padding-bottom: 8px;
     text-decoration: none;
     font-size: 25px;
     color: #000000;
     display: block;
-    transition: 0.3s;
+   
   }
   
   .sidenav a:hover {
     color: #f70606;
-    background-color: rgb(228, 228, 228);
   }
   
   .sidenav .closebtn {
@@ -55,7 +56,37 @@
     text-align: center;
     padding-bottom: 15px;
  }
+ #menu-row{
+
+  background-color: #ffffff;
+  transition: 0.3s;
+ }
+ #menu-row:hover{
+
+  background-color: rgb(198, 252, 220);
+ }
   
+ #menu-col1{
+
+  padding-left: 10px;
+  width: 10%;
+ }
+ #menu-col2{
+   width: 90%;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

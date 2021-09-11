@@ -89,13 +89,101 @@ if(isset($_POST['submit'])){
 <div id="mySidenav" class="sidenav">
         <div class="logo" id="logo"><i class="fas fa-anchor"></i></div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../main-panel/main-panel.php" style="text-align: center;"><i class="fa fa-arrow-left" aria-hidden="true"></i> Dashboard</a>
-        <a href="#" style="text-align: center;"><i class="fa fa-book" aria-hidden="true" style="color: yellow;"></i>    Billing</a>
-        <a href="#" style="text-align: center;"><i class="fa fa-users" aria-hidden="true" style="color: rgb(255, 153, 0);"></i> Employees</a>
-        <a href="#" style="text-align: center;"><i class="fa fa-wrench" aria-hidden="true" style="color: rgb(0, 196, 245);"></i> Boat repaires</a>
-        <a href="#" style="text-align: center;"><i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i>    Reports</a>
-        <a href="#" style="text-align: center;"><i class="fa fa-external-link-square" aria-hidden="true" style="color: rgb(255, 0, 234);"></i> Bookings</a>
-        <a href="../Home/Index.php" style="text-align: center;"  onclick="javascript:logout();"><i class="fa fa-sign-out" aria-hidden="true" style="color: rgb(243, 7, 7);"></i>    Sign out</a>
+        <table id="menu-table">
+
+        <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="../main-panel/main-panel.php">Dashboard</a></h3>
+
+           </td>
+      
+   </tr>
+       
+       <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <i class="fa fa-book" aria-hidden="true" style="color: yellow;"></i>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="../Billing-section/billing.php"> Billing</a></h3>
+
+           </td>
+      
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <i class="fa fa-users" aria-hidden="true" style="color: rgb(255, 153, 0);"></i>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="#"> Employees</a></h3>
+
+           </td>
+      
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <i class="fa fa-wrench" aria-hidden="true" style="color: rgb(0, 196, 245);"></i>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="#"> Boat repaires</a></h3>
+
+           </td>
+      
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i> 
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="#">Reports</a></h3>
+
+           </td>
+      
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <h3><i class="fa fa-external-link-square" aria-hidden="true" style="color: rgb(255, 0, 234);"></i></h3>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="#">Bookings</a></h3>
+
+           </td>
+      
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
+           <h3><i class="fa fa-sign-out" aria-hidden="true" style="color: rgb(243, 7, 7);"></i></h3>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="../Home/Index.php" onclick="javascript:logout();" >Sign out</a></h3>
+
+           </td>
+      
+   </tr>
+   </table>
         
       </div>
 
