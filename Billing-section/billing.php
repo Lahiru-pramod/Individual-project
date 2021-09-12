@@ -319,20 +319,34 @@ if(isset($_POST['submit'])){
 
   <!-- Bill details table -->
 
+
+
   <table class="table" id="Bill-table">
+
       <tr>
           <th>Bill ID</th>
           <th>Orderer ID</th>
           <th>Date</th>
           <th>status</th>
       </tr>
-      <tr>
-          <td>1</td>
-          <td>132456432v</td>
-          <td>2021/05/31</td>
-          <td><input type="button" value="Details" id="details-btn"></td>
-      </tr>
+
+      <?php
+
+            $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+            $sql = "SELECT * FROM bills order by bill_ID desc";
+            $result = mysqli_query($connection , $sql);
+            while($row = mysqli_fetch_array($result)){ 
+
+      echo'<tr>';
+        echo  "<td>".$row['bill_ID']."</td>";
+          echo"<td>".$row['Orderer_ID']."</td>";
+          echo"<td>".$row['Booking_date']."</td>";
+          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Details</a></td>";
+      echo'</tr>';
+            }
+      ?>
   </table>
+  
 
 
 
@@ -340,14 +354,6 @@ if(isset($_POST['submit'])){
 </div>  
      </div>
      <!-- Bill form END -->
-
-
-
-
-
-
-
-
 
 
 

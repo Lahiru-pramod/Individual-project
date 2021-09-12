@@ -232,6 +232,7 @@ table {
   outline: none;
   border: none;
   border-radius: 3px;
+  text-decoration: none;
 }
 
 @media screen and (max-height: 450px) {
