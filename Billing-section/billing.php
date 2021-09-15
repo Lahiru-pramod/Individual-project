@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 
 
 
-      
+
 }
 
 
@@ -102,9 +102,9 @@ if(isset($_POST['submit'])){
            <h3>  <a href="../main-panel/main-panel.php">Dashboard</a></h3>
 
            </td>
-      
+
    </tr>
-       
+
        <tr id="menu-row" >
            <td id="menu-col1">
 
@@ -116,7 +116,7 @@ if(isset($_POST['submit'])){
            <h3>  <a href="../Billing-section/billing.php"> Billing</a></h3>
 
            </td>
-      
+
    </tr>
    <tr id="menu-row" >
            <td id="menu-col1">
@@ -129,7 +129,7 @@ if(isset($_POST['submit'])){
            <h3>  <a href="#"> Employees</a></h3>
 
            </td>
-      
+
    </tr>
    <tr id="menu-row" >
            <td id="menu-col1">
@@ -142,12 +142,12 @@ if(isset($_POST['submit'])){
            <h3>  <a href="#"> Boat repaires</a></h3>
 
            </td>
-      
+
    </tr>
    <tr id="menu-row" >
            <td id="menu-col1">
 
-           <i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i> 
+           <i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i>
 
            </td>
            <td id="menu-col2">
@@ -155,7 +155,7 @@ if(isset($_POST['submit'])){
            <h3>  <a href="#">Reports</a></h3>
 
            </td>
-      
+
    </tr>
    <tr id="menu-row" >
            <td id="menu-col1">
@@ -168,7 +168,7 @@ if(isset($_POST['submit'])){
            <h3>  <a href="#">Bookings</a></h3>
 
            </td>
-      
+
    </tr>
    <tr id="menu-row" >
            <td id="menu-col1">
@@ -181,10 +181,10 @@ if(isset($_POST['submit'])){
            <h3>  <a href="../Home/Index.php" onclick="javascript:logout();" >Sign out</a></h3>
 
            </td>
-      
+
    </tr>
    </table>
-        
+
       </div>
 
 
@@ -199,11 +199,11 @@ if(isset($_POST['submit'])){
             <div class="col-8" id="col1">
                 <h3><i class="fas fa-anchor"></i> Captain Cruise</h3>
             </div>
-            <div class="col" id="col2"> 
+            <div class="col" id="col2">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
         </div>
-      
+
       <div class="row" id="row3">
           <h3>- Billing Section - </h3>
       </div>
@@ -248,7 +248,7 @@ if(isset($_POST['submit'])){
                     <td><h5>Location</h5></td>
                     <td><h5>: <select id="location" name="location" >
                             <option value="Madu">Madu river safari - Balapitiya</option>
-                            
+
                             </select></h5></td>
                 </tr>
                 <tr>
@@ -294,27 +294,26 @@ if(isset($_POST['submit'])){
                             <td><input type="text" name="totalcost" id="total-cost" ></td>
                         </tr>
 
-                    
+
                     </td>
 
                 </tr>
 
 
-            
+
 
 
                 </table>
-                
-        </form> 
+
+        </form>
 </div>
 <div class="col" id="row5-col2">
    <h3>All Bills Details Section</h3>
    <div class="search-container">
-    <form action="#">
-        <h5>Enter the Orderer id no:</h5>
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit" id="bill-search-button"><i class="fa fa-search"></i></button>
-    </form>
+        <h5>Search for :</h5>
+        <div class="search-bar" id="search-bar">
+      <input type="text" onkeyup="search()" placeholder="Enter Orderer NIC ..." name="search" id="searchbox">
+        </div>
   </div>
 
   <!-- Bill details table -->
@@ -323,19 +322,23 @@ if(isset($_POST['submit'])){
 
   <table class="table" id="Bill-table">
 
+  <thead>
+
       <tr>
           <th>Bill ID</th>
           <th>Orderer ID</th>
           <th>Date</th>
           <th>status</th>
       </tr>
+      </thead>
 
+      <tbody>
       <?php
 
             $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
             $sql = "SELECT * FROM bills order by bill_ID desc";
             $result = mysqli_query($connection , $sql);
-            while($row = mysqli_fetch_array($result)){ 
+            while($row = mysqli_fetch_array($result)){
 
       echo'<tr>';
         echo  "<td>".$row['bill_ID']."</td>";
@@ -345,13 +348,15 @@ if(isset($_POST['submit'])){
       echo'</tr>';
             }
       ?>
+
+</tbody>
   </table>
-  
 
 
 
-  
-</div>  
+
+
+</div>
      </div>
      <!-- Bill form END -->
 
