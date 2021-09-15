@@ -243,7 +243,11 @@ table {
   width: 100%;
 }
 
-@media screen and (max-height: 450px) {
+#tbody {
+  overflow: hidden;
+}
+
+@media screen and (max-height: 750px) {
   .sidenav {
     padding-top: 15px;
   }

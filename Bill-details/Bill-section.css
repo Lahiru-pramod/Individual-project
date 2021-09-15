@@ -1,0 +1,30 @@
+#header {
+  background-color: #2ca52c;
+  border-radius: 20px;
+}
+
+#print-box-row {
+  margin-top: 20px;
+  background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#print-box {
+  background-color: white;
+  width: 700px;
+  padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#info-table, tr, td {
+  border: none;
+  outline: none;
+}
+
+#topic {
+  width: 140px;
+}
+/*# sourceMappingURL=Bill-section.css.map */

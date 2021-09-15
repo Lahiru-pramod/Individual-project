@@ -325,14 +325,14 @@ if(isset($_POST['submit'])){
   <thead>
 
       <tr>
-          <th>Bill ID</th>
+          <th scope="col">Bill ID</th>
           <th>Orderer ID</th>
           <th>Date</th>
           <th>status</th>
       </tr>
       </thead>
 
-      <tbody>
+      <tbody id="tbody">
       <?php
 
             $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
@@ -344,7 +344,7 @@ if(isset($_POST['submit'])){
         echo  "<td>".$row['bill_ID']."</td>";
           echo"<td>".$row['Orderer_ID']."</td>";
           echo"<td>".$row['Booking_date']."</td>";
-          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Details</a></td>";
+          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Print</a></td>";
       echo'</tr>';
             }
       ?>
