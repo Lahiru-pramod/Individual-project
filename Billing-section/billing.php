@@ -173,6 +173,19 @@ if(isset($_POST['submit'])){
    <tr id="menu-row" >
            <td id="menu-col1">
 
+           <i class="fa fa-money" aria-hidden="true" style="color: blue;"></i>
+
+           </td>
+           <td id="menu-col2">
+
+           <h3>  <a href="#">Price Changes</a></h3>
+
+           </td>
+
+   </tr>
+   <tr id="menu-row" >
+           <td id="menu-col1">
+
            <h3><i class="fa fa-sign-out" aria-hidden="true" style="color: rgb(243, 7, 7);"></i></h3>
 
            </td>
@@ -277,25 +290,28 @@ if(isset($_POST['submit'])){
                 </tr>
                 <tr>
                     <td >
-                        <tr>
+                        <tr id="count">
                             <td><p id="ad"></p></td>
                             <td><input type="text" name="adcost" id="ad-cost"  ></td>
                         </tr>
-                        <tr>
+                        <tr  id="count">
                             <td><p id="chi-pass-co"></p></td>
                             <td><input type="text" name="chicost" id="chi-cost"  ></td>
                         </tr>
-                        <tr>
+                        <tr id="count">
                             <td><p id="pass-meal-co"></p></td>
                             <td><input type="text" name="mealcost" id="meal-cost"  ></td>
                         </tr>
-                        <tr>
+                        <tr id="count">
                             <td><p id="tot-pass-cost"></p></td>
                             <td><input type="text" name="totalcost" id="total-cost" ></td>
                         </tr>
 
 
                     </td>
+
+                </tr>
+                <tr>
 
                 </tr>
 
