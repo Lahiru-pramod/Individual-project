@@ -1,0 +1,79 @@
+#blink {
+  -webkit-animation: blinkingText 1.2s infinite;
+          animation: blinkingText 1.2s infinite;
+}
+
+@-webkit-keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: black;
+  }
+  60% {
+    color: #2bff00;
+  }
+  99% {
+    color: #2bff00;
+  }
+  100% {
+    color: #2bff00;
+  }
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: black;
+  }
+  60% {
+    color: #2bff00;
+  }
+  99% {
+    color: #2bff00;
+  }
+  100% {
+    color: #2bff00;
+  }
+}
+
+#boxes {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+#boxes:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#boxes input {
+  margin: 5px;
+  text-align: center;
+}
+
+#change {
+  padding: 3px 40px;
+  border-radius: 10px;
+  border: none;
+  background: #3bb10d;
+}
+
+#fixinput {
+  border: none;
+  outline: none;
+  background: none;
+  color: red;
+  font-weight: bolder;
+}
+
+#row2-row1 {
+  grid-gap: 10px;
+}
+/*# sourceMappingURL=prices-changes-logged.css.map */

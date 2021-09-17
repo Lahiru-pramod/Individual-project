@@ -238,7 +238,7 @@ if(isset($_POST['submit'])){
                     <td><h5>: <input type="text" name="orderer" id="" required  ></h5></td>
                 </tr>
                 <tr>
-                    <td><h5>Orderer NIC no.</h5></td>
+                    <td><h5 id="nic">Orderer NIC no.</h5></td>
                     <td><h5>: <input type="text" name="orderid" id="" required ></h5></td>
                 </tr>
                 <tr>

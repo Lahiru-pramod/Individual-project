@@ -1,0 +1,53 @@
+
+#blink{
+
+    animation:blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: rgb(0, 0, 0); }
+    60%{    color:rgb(43, 255, 0); }
+    99%{    color:rgb(43, 255, 0); }
+    100%{   color: rgb(43, 255, 0) ;  }
+}
+
+#boxes{
+
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 15px ;
+    transition: ease-in-out 0.3s;
+  
+    
+}
+#boxes:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+
+#boxes input{
+
+    margin: 5px;
+    text-align: center;
+}
+#change{
+
+    padding: 3px 40px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(59, 177, 13);
+}
+#fixinput{
+
+    border:none;
+    outline: none;
+    background: none;
+    color: red;
+    font-weight: bolder;
+}
+#row2-row1{
+
+    grid-gap: 10px;
+}
