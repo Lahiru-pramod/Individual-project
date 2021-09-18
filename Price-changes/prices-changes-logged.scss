@@ -23,7 +23,7 @@
     
 }
 #boxes:hover{
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgb(49, 48, 48) 0px 5px 15px 0px;
 }
 
 
@@ -51,3 +51,25 @@
 
     grid-gap: 10px;
 }
+#row4{
+
+    border-radius: 20px;
+}
+
+#row5-1{
+
+    grid-gap: 10px;
+
+
+}
+
+#box-image{
+
+    background-image: url(./images/6308.jpg);
+    background-repeat: no-repeat;
+    height: 120px;
+
+
+
+}
+
