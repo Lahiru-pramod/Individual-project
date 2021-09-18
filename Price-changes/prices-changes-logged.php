@@ -191,25 +191,40 @@ if(isset($_POST['meal'])){
        <div class="row text-center" id="row5-1">
            <div class="col" id="boxes">
                <div class="row" id="box-image">
-
-               <h2>Lahiru</h2>
-               <img src="./images/6308.jpg" alt="">
+               <h5>Office Staff Package</h5>
+                 <img src="./images/6308.jpg" alt="">
 
                </div>
+               <h5 style="color: red;">15,000</h5>
+               <input type="text" name="childprice" placeholder="Change price.."><br>
+                <input type="submit" value="Change" id="change" name="child" ><br>
            </div>
 
            <div class="col" id="boxes">
-               <h2>Lahiru</h2>
+           <div class="row" id="box-image">
+               <h5>Ultra Family Package</h5>
+                 <img src="./images/5220.jpg" alt="">
+                 
+              
+
+               </div>
+               <h5 style="color: red;">10,000</h5>
+               <input type="text" name="childprice" placeholder="Change price.."><br>
+                <input type="submit" value="Change" id="change" name="child" ><br>
            </div>
 
            <div class="col" id="boxes">
-               <h2>Lahiru</h2>
-           </div>
+           <div class="row" id="box-image">
+               <h5> School Lite Package</h5>
+                 <img src="./images/5853.jpg" alt="">
+                 
+              
 
-           <div class="col" id="boxes">
-               <h2>Lahiru</h2>
+               </div>
+               <h5 style="color: red;">12,000</h5>
+               <input type="text" name="childprice" placeholder="Change price.."><br>
+                <input type="submit" value="Change" id="change" name="child" ><br>
            </div>
-
 
        </div>
 
