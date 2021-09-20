@@ -98,7 +98,7 @@ if(isset($_POST['meal'])){
 
 <div class="container-fluid">
     <div class="row text-center pt-2" id="row1">
-        <h2 id="blink">Latest Prices of packages</h2>
+        <h2 id="blink">Latest Prices of Boat safari packages</h2>
         <h4><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> <a href="../main-panel/main-panel.php">Dashboard</a></h4>
 
     </div>
@@ -191,40 +191,101 @@ if(isset($_POST['meal'])){
        <div class="row text-center" id="row5-1">
            <div class="col" id="boxes">
                <div class="row" id="box-image">
-               <h5>Office Staff Package</h5>
+               <h5>10 members up Package</h5>
                  <img src="./images/6308.jpg" alt="">
 
                </div>
-               <h5 style="color: red;">15,000</h5>
-               <input type="text" name="childprice" placeholder="Change price.."><br>
-                <input type="submit" value="Change" id="change" name="child" ><br>
+
+               <!-- 10 member package -->
+               <table class="table" id="packagetable">
+
+               <tr>
+                   <td><h5>Adult</h5></td>
+                   <td><h5 style="color: red;">600</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Child</h5></td>
+                   <td><h5 style="color: red;">400</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Meal</h5></td>
+                   <td><h5 style="color: red;">250</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+
+               </table>
            </div>
 
+           <!-- 20 member package -->
            <div class="col" id="boxes">
-           <div class="row" id="box-image">
-               <h5>Ultra Family Package</h5>
-                 <img src="./images/5220.jpg" alt="">
-                 
-              
+               <div class="row" id="box-image">
+               <h5>20 members up Package</h5>
+                 <img src="./images/6308.jpg" alt="">
 
                </div>
-               <h5 style="color: red;">10,000</h5>
-               <input type="text" name="childprice" placeholder="Change price.."><br>
-                <input type="submit" value="Change" id="change" name="child" ><br>
+               <table class="table" id="packagetable">
+
+               <tr>
+                   <td><h5>Adult</h5></td>
+                   <td><h5 style="color: red;">500</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Child</h5></td>
+                   <td><h5 style="color: red;">300</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Meal</h5></td>
+                   <td><h5 style="color: red;">240</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+
+               </table>
            </div>
+
+           <!-- 30 member package -->
 
            <div class="col" id="boxes">
-           <div class="row" id="box-image">
-               <h5> School Lite Package</h5>
-                 <img src="./images/5853.jpg" alt="">
-                 
-              
+               <div class="row" id="box-image">
+               <h5>30 members up Package</h5>
+                 <img src="./images/6308.jpg" alt="">
 
                </div>
-               <h5 style="color: red;">12,000</h5>
-               <input type="text" name="childprice" placeholder="Change price.."><br>
-                <input type="submit" value="Change" id="change" name="child" ><br>
+               <table class="table" id="packagetable">
+
+               <tr>
+                   <td><h5>Adult</h5></td>
+                   <td><h5 style="color: red;">400</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Child</h5></td>
+                   <td><h5 style="color: red;">200</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+               <tr>
+                   <td><h5>Meal</h5></td>
+                   <td><h5 style="color: red;">220</h5></td>
+                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn"></td>
+               </tr>
+
+               </table>
            </div>
+<!-- over this line -->
+
+             
 
        </div>
 

@@ -88,4 +88,25 @@
 #box-image {
   height: 230px;
 }
+
+#packageinput {
+  width: 100px;
+}
+
+#packagetable tr td {
+  padding: 0px;
+  margin: 0px;
+  vertical-align: middle;
+}
+
+#packagetable tr {
+  text-align: center;
+}
+
+#packagebtn {
+  background: #3bb10d;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=prices-changes-logged.css.map */
