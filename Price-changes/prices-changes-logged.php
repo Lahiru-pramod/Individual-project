@@ -15,6 +15,96 @@ if(isset($_POST['adult'])){
      // if successful
     echo'<script> alert("Do you want change Adult price?");
             </script>';
+            
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+
+       header('Location:./prices-changes-logged.php');
+
+
+    };
+
+
+};
+
+if(isset($_POST['child'])){
+
+    $child=  mysqli_real_escape_string($connection, $_POST['childprice']);
+
+    $query= "UPDATE prices SET child = '{$child}' WHERE ID = 1";
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+     // if successful
+    echo'<script> alert("Do you want change Child price?");
+            </script>';
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+
+
+    };
+
+
+};
+
+if(isset($_POST['meal'])){
+
+    
+
+    $meal=  mysqli_real_escape_string($connection, $_POST['mealprice']);
+
+    $query= "UPDATE prices SET meal = '{$meal}' WHERE ID = 1";
+    
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+     // if successful
+    echo'<script> confirm("Do you want change meal price?");
+            </script>';
+
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+
+
+    };
+
+
+};
+
+
+
+// Special 10 package prices = database row 2
+
+
+
+
+
+
+
+
+
+
+if(isset($_POST['10adultbtn'])){
+
+    
+
+    $adultpack10=  mysqli_real_escape_string($connection, $_POST['10adult']);
+
+    $query= "UPDATE prices SET Adult = '{$adultpack10}' WHERE ID = 2";
+    
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+     // if successful
+    echo'<script> confirm("Do you want change 10 up Package price?");
+            </script>';
+
 
     }else{
 
@@ -76,6 +166,9 @@ if(isset($_POST['meal'])){
 
 
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +208,7 @@ if(isset($_POST['meal'])){
                 <?php
                 
                 $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
-                $sql = "SELECT Adult FROM prices order by ID desc";
+                $sql = "SELECT Adult FROM prices where id=1 order by ID desc";
                 $result = mysqli_query($connection , $sql);
                 while($row = mysqli_fetch_array($result)){
 
@@ -137,7 +230,7 @@ if(isset($_POST['meal'])){
                 <?php
                 
                 $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
-                $sql = "SELECT child FROM prices order by ID desc";
+                $sql = "SELECT child FROM prices where id=1 order by ID desc";
                 $result = mysqli_query($connection , $sql);
                 while($row = mysqli_fetch_array($result)){
 
@@ -158,7 +251,7 @@ if(isset($_POST['meal'])){
                 <?php
                 
                 $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
-                $sql = "SELECT meal FROM prices order by ID desc";
+                $sql = "SELECT meal FROM prices where id=1 order by ID desc";
                 $result = mysqli_query($connection , $sql);
                 while($row = mysqli_fetch_array($result)){
 
@@ -201,25 +294,76 @@ if(isset($_POST['meal'])){
 
                <tr>
                    <td><h5>Adult</h5></td>
-                   <td><h5 style="color: red;">600</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT Adult FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['Adult']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10adult" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10adultbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Child</h5></td>
-                   <td><h5 style="color: red;">400</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT child FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['child']." </h5>";
+
+                };
+
+                
+                ?>
+                       
+                   
+                    
+                    </td>
+                   <td><input type="text" name="10child" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10child"></td>
                </tr>
                <tr>
                    <td><h5>Meal</h5></td>
-                   <td><h5 style="color: red;">250</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT meal FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['meal']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                   <td><input type="text" name="10meal" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="button" value="change" id="packagebtn" name="10meal"></td>
                </tr>
 
                </table>
            </div>
+
+           <!-- Finish .......................................... -->
 
            <!-- 20 member package -->
            <div class="col" id="boxes">
