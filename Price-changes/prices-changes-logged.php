@@ -116,11 +116,11 @@ if(isset($_POST['10adultbtn'])){
 
 };
 
-if(isset($_POST['child'])){
+if(isset($_POST['10childbtn'])){
 
-    $child=  mysqli_real_escape_string($connection, $_POST['childprice']);
+    $child=  mysqli_real_escape_string($connection, $_POST['10child']);
 
-    $query= "UPDATE prices SET child = '{$child}' WHERE ID = 1";
+    $query= "UPDATE prices SET child = '{$child}' WHERE ID = 2";
 
     $result = mysqli_query($connection, $query);
     if ($result){
@@ -138,13 +138,13 @@ if(isset($_POST['child'])){
 
 };
 
-if(isset($_POST['meal'])){
+if(isset($_POST['10mealbtn'])){
 
     
 
-    $meal=  mysqli_real_escape_string($connection, $_POST['mealprice']);
+    $meal=  mysqli_real_escape_string($connection, $_POST['10meal']);
 
-    $query= "UPDATE prices SET meal = '{$meal}' WHERE ID = 1";
+    $query= "UPDATE prices SET meal = '{$meal}' WHERE ID = 2";
     
 
     $result = mysqli_query($connection, $query);
@@ -335,8 +335,10 @@ if(isset($_POST['meal'])){
                    
                     
                     </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
                    <td><input type="text" name="10child" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="submit" value="change" id="packagebtn" name="10child"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10childbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Meal</h5></td>
@@ -356,8 +358,10 @@ if(isset($_POST['meal'])){
                 ?>
                     
                     </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
                    <td><input type="text" name="10meal" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn" name="10meal"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10mealbtn"></td>
+            </form>
                </tr>
 
                </table>
@@ -372,31 +376,86 @@ if(isset($_POST['meal'])){
                  <img src="./images/6308.jpg" alt="">
 
                </div>
+
+        
                <table class="table" id="packagetable">
 
                <tr>
                    <td><h5>Adult</h5></td>
-                   <td><h5 style="color: red;">500</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT Adult FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['Adult']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10adult" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10adultbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Child</h5></td>
-                   <td><h5 style="color: red;">300</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT child FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['child']." </h5>";
+
+                };
+
+                
+                ?>
+                       
+                   
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10child" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10childbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Meal</h5></td>
-                   <td><h5 style="color: red;">240</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT meal FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['meal']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10meal" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10mealbtn"></td>
+            </form>
                </tr>
 
                </table>
            </div>
 
-           <!-- 30 member package -->
+           <!-- 30 member up code....................................... -->
 
            <div class="col" id="boxes">
                <div class="row" id="box-image">
@@ -404,29 +463,87 @@ if(isset($_POST['meal'])){
                  <img src="./images/6308.jpg" alt="">
 
                </div>
+
+            
                <table class="table" id="packagetable">
 
                <tr>
                    <td><h5>Adult</h5></td>
-                   <td><h5 style="color: red;">400</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT Adult FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['Adult']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10adult" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10adultbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Child</h5></td>
-                   <td><h5 style="color: red;">200</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT child FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['child']." </h5>";
+
+                };
+
+                
+                ?>
+                       
+                   
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10child" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10childbtn"></td>
+            </form>
                </tr>
                <tr>
                    <td><h5>Meal</h5></td>
-                   <td><h5 style="color: red;">220</h5></td>
-                   <td><input type="text" name="" id="packageinput" placeholder="New Price"></td>
-                   <td><input type="button" value="change" id="packagebtn"></td>
+                   <td>
+                   <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT meal FROM prices where ID=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h5 style='color:red;'>".$row['meal']." </h5>";
+
+                };
+
+                
+                ?>
+                    
+                    </td>
+                    <form action="prices-changes-logged.php" method="POST" enctype="multipart/form-data">
+                   <td><input type="text" name="10meal" id="packageinput" placeholder="New Price"></td>
+                   <td><input type="submit" value="change" id="packagebtn" name="10mealbtn"></td>
+            </form>
                </tr>
 
                </table>
            </div>
+        
+
+
 <!-- over this line -->
 
              
