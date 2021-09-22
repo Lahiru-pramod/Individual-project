@@ -111,14 +111,53 @@ $maincolor: yellowgreen;
     color: rgb(202, 198, 198);
     padding-top: 60px;
     border-radius: 25px;
+   
+    
 
     
+}
+
+#row-price{
+
+    margin-top: 20px;
+    justify-content: center;
+
+
+}
+#price-board{
+
+    width: 900px;
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+#price-board tr,th{
+
+    text-align: center;
+    transition: ease-in-out 0.2s;
+}
+#price-board tr:hover{
+
+    background: rgb(83, 81, 81);
+    color: yellow;
+}
+#topic-table{
+
+    text-align: left;
+}
+#price-board tr,td{
+
+    border: none;
+    outline: none;
 }
 #row4{
 
     color: rgb(255, 0, 0);
     padding-top: 10px;
     margin-top: 20px;
+    text-align: center;
+    background: rgb(240, 179, 179);
+    border-radius: 20px;
 }
 #row5{
 
@@ -264,6 +303,7 @@ table{
 
     overflow: hidden;
 }
+
 
 
  

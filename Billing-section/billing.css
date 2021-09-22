@@ -115,10 +115,46 @@
   border-radius: 25px;
 }
 
+#row-price {
+  margin-top: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#price-board {
+  width: 900px;
+  background: black;
+  color: white;
+}
+
+#price-board tr, th {
+  text-align: center;
+  -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+
+#price-board tr:hover {
+  background: #535151;
+  color: yellow;
+}
+
+#topic-table {
+  text-align: left;
+}
+
+#price-board tr, td {
+  border: none;
+  outline: none;
+}
+
 #row4 {
   color: red;
   padding-top: 10px;
   margin-top: 20px;
+  text-align: center;
+  background: #f0b3b3;
+  border-radius: 20px;
 }
 
 #row5 {

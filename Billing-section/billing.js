@@ -4,8 +4,14 @@ function genarate(){
     var adult = parseInt(document.getElementById("adult").value);
     var child = parseInt(document.getElementById("child").value);
     var meal = document.getElementById("meal").value;
-    
+    var package = document.getElementById("package").value;
+
+    if (package == "normal"){
+      
+      
+
     if(isNaN(adult) || adult==0){
+
     
     
          alert("your form Adult section is empty. Please Fill it & try again");
@@ -85,7 +91,21 @@ function genarate(){
 
     }
 
+  }
+
     
+    }
+
+    function Clean(){
+
+      document.getElementById("ad").innerHTML ="";
+      document.getElementById("ad-cost").value = "";
+      document.getElementById("chi-pass-co").innerHTML = "";
+      document.getElementById("chi-cost").value = "";
+      document.getElementById("pass-meal-co").innerHTML = "";
+     document.getElementById("meal-cost").value = "";
+     document.getElementById("tot-pass-cost").innerHTML = "";
+     document.getElementById("total-cost").value= "";
     }
 
     function openNav() {

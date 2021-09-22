@@ -27,6 +27,7 @@ if(isset($_POST['submit'])){
     $booking = mysqli_real_escape_string($connection, $_POST['bookingtime']);
     $adult = mysqli_real_escape_string($connection, $_POST['adult']);
     $child = mysqli_real_escape_string($connection, $_POST['child']);
+    $package = mysqli_real_escape_string($connection, $_POST['package']);
     $location = mysqli_real_escape_string($connection, $_POST['location']);
     $Address = mysqli_real_escape_string($connection, $_POST['Address']);
     $contact = mysqli_real_escape_string($connection, $_POST['contact']);
@@ -38,9 +39,9 @@ if(isset($_POST['submit'])){
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
 
     $query= "INSERT INTO bills (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);
@@ -217,11 +218,62 @@ if(isset($_POST['submit'])){
             </div>
         </div>
 
-      <div class="row" id="row3">
+      <div class="row " id="row3">
           <h3>- Billing Section - </h3>
       </div>
+  <!-- Prices normal and packages....................... -->
+
+      <div class="row" id="row-price">
+
+      <table class="table" id="price-board">
+
+      <tr >
+          <th colspan="4">Latest Prices Board (normal/Packages)</th>
+
+      </tr>
+      <tr>
+          <th>Status</th>
+          <th>Adult(.rs)</th>
+          <th>Child(.rs)</th>
+          <th>Meal(.rs)</th>
+
+      </tr>
+      <tr>
+          <th  id="topic-table">Normal prices </th>
+          <td>800</td>
+          <td>600</td>
+          <td>250</td>
+      </tr>
+      <tr>
+          <th id="topic-table">10 members up package </th>
+          <td>700</td>
+          <td>400</td>
+          <td>230</td>
+      </tr>
+      <tr>
+          <th id="topic-table">20 members up package </th>
+          <td>500</td>
+          <td>300</td>
+          <td>220</td>
+      </tr>
+      <tr>
+          <th id="topic-table">30 members up package </th>
+          <td>450</td>
+          <td>290</td>
+          <td>210</td>
+      </tr>
+
+
+
+      </table>
+
+      </div>
+
+
+
+
       <div class="row" id="row4">
-          <h4>*Create a new bill</h4>
+          <h4> -- Bill Create & Find Section --</h4>
       </div>
 
       <!-- bill form -->
@@ -242,11 +294,11 @@ if(isset($_POST['submit'])){
                     <td><h5>: <input type="text" name="orderid" id="" required ></h5></td>
                 </tr>
                 <tr>
-                    <td><h5>Booking date</h5></td>
+                    <td><h5>Traveling date</h5></td>
                     <td><h5>: <input type="date" name="bookingdate" id="" required ></h5></td>
                 </tr>
                 <tr>
-                    <td><h5>Booking time</h5></td>
+                    <td><h5>Traveling time</h5></td>
                     <td><h5>: <input type="time" name="bookingtime" id="" required ></h5></td>
                 </tr>
                 <tr>
@@ -256,6 +308,16 @@ if(isset($_POST['submit'])){
                 <tr>
                     <td></td>
                     <td><h5>Child : <input type="number" name="child" id="child" min="0" max="20" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td><h5>Package :</h5></td>
+                    <td><h5>: <select id="package" name="package" >
+                            <option value="normal">Normal Prices</option>
+                            <option value="10up">10 up Package</option>
+                            <option value="20up">20 up Package</option>
+                            <option value="30up">30 up Package</option>
+
+                            </select></h5></td>
                 </tr>
                 <tr>
                     <td><h5>Location</h5></td>
@@ -286,7 +348,7 @@ if(isset($_POST['submit'])){
                 </tr>
                 <tr>
                     <td></td>
-                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" id="clear-btn"> </td>
+                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" onclick="Clean()" id="clear-btn"> </td>
                 </tr>
                 <tr>
                     <td >
