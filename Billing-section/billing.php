@@ -240,27 +240,71 @@ if(isset($_POST['submit'])){
       </tr>
       <tr>
           <th  id="topic-table">Normal prices </th>
-          <td>800</td>
-          <td>600</td>
-          <td>250</td>
+          <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM prices where id=1 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+         echo" <td>".$row['Adult']."</td>";
+         echo"<td>".$row['child']."</td>";
+          echo"<td>".$row['meal']."</td>";
+
+          
+        };
+        ?>
       </tr>
       <tr>
           <th id="topic-table">10 members up package </th>
-          <td>700</td>
-          <td>400</td>
-          <td>230</td>
+          <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM prices where id=2 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+         echo" <td>".$row['Adult']."</td>";
+         echo"<td>".$row['child']."</td>";
+          echo"<td>".$row['meal']."</td>";
+
+          
+        };
+        ?>
       </tr>
       <tr>
           <th id="topic-table">20 members up package </th>
-          <td>500</td>
-          <td>300</td>
-          <td>220</td>
+          <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM prices where id=3 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+         echo" <td>".$row['Adult']."</td>";
+         echo"<td>".$row['child']."</td>";
+          echo"<td>".$row['meal']."</td>";
+
+          
+        };
+        ?>
       </tr>
       <tr>
           <th id="topic-table">30 members up package </th>
-          <td>450</td>
-          <td>290</td>
-          <td>210</td>
+          <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM prices where id=4 order by ID desc";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+         echo" <td>".$row['Adult']."</td>";
+         echo"<td>".$row['child']."</td>";
+          echo"<td>".$row['meal']."</td>";
+
+          
+        };
+        ?>
       </tr>
 
 
@@ -279,73 +323,162 @@ if(isset($_POST['submit'])){
       <!-- bill form -->
 
       <div class="row" id="row5">
-          <div class="col">
+          <!-- <div class="col"> -->
 
          <form action="billing.php" method="POST" enctype="multipart/form-data" id="form-menu">
 
                 <table class="table" id="form-table">
 
                 <tr>
-                    <td id="bill-form-td"><h5>Orderer name</h5></td>
-                    <td><h5>: <input type="text" name="orderer" id="" required  ></h5></td>
+                    <td id="bill-form-td">
+                      <p> Orderer name :</p>
+                    <p><input type="text" name="orderer" id="" required  ></p>
+                    </td>
+                    <td>
+                    <p>Orderer NIC no:</p>
+                    <p><input type="text" name="orderid" id="" required ></p>
+                    </td>
+                    <td>
+                    <p>Traveling date:</p>
+                    <p><input type="date" name="bookingdate" id="" required ></p>
+                    </td>
+                    <td colspan="2">
+                    <p>Traveling time:</p>
+                    <p> <select id="bookingtime" name="bookingtime" required >
+                            <option hidden selected>select time...</option>
+                            <option value="8-10">Morning 8 - 10 am</option>
+                            <option value="10-12">Morning 10 - 12 am</option>
+                            <option value="2-4">Evening 2 - 4 pm</option>
+                            <option value="4-6">Evening 4 - 6 pm</option>
+
+                            </select></p>
+                    </td>
+                
+
+
                 </tr>
                 <tr>
-                    <td><h5 id="nic">Orderer NIC no.</h5></td>
-                    <td><h5>: <input type="text" name="orderid" id="" required ></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Traveling date</h5></td>
-                    <td><h5>: <input type="date" name="bookingdate" id="" required ></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Traveling time</h5></td>
-                    <td><h5>: <input type="time" name="bookingtime" id="" required ></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Passagers</h5></td>
-                    <td><h5>Adult : <input type="number"   name="adult" id="adult" required min="0" max="100" placeholder="0"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><h5>Child : <input type="number" name="child" id="child" min="0" max="20" placeholder="0"></td>
-                </tr>
-                <tr>
-                    <td><h5>Package :</h5></td>
-                    <td><h5>: <select id="package" name="package" >
+                    <td>
+                        <p>Passagers:</p>
+                        <p>Adult : <input type="number"   name="adult" id="adult" required min="0" max="100" placeholder="0"></p>
+                    </td>
+                    <td>
+                        <p>Passagers: </p>
+                        <p>Child : <input type="number" name="child" id="child" min="0" max="20" placeholder="0"></p>
+                    </td>
+                    <td>
+                        <p>Package :</p>
+                        <p> <select id="package" name="package" >
                             <option value="normal">Normal Prices</option>
                             <option value="10up">10 up Package</option>
                             <option value="20up">20 up Package</option>
                             <option value="30up">30 up Package</option>
 
-                            </select></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Location</h5></td>
-                    <td><h5>: <select id="location" name="location" >
-                            <option value="Madu">Madu river safari - Balapitiya</option>
+                            </select></p>
+                    </td>
 
-                            </select></h5></td>
+                    <td>
+                        <p>Location :</p>
+                        <p> <select id="location" name="location" >
+                            <option value="Madu">safari-Balapitiya</option>
+
+                            </select></p>
+                    </td>
+                    <td>
+                        <p>Address :</p>
+                        <p> <input type="text" name="Address" id=""   required></p>
+                    </td>
                 </tr>
                 <tr>
-                    <td><h5>Address</h5></td>
-                    <td><h5>: <input type="text" name="Address" id=""   required></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Contact no</h5></td>
-                    <td><h5>: <input type="text" name="contact" id=""   required></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Email Address</h5></td>
-                    <td><h5>: <input type="text" name="email" id=""  required></h5></td>
-                </tr>
-                <tr>
-                    <td><h5>Meals</h5></td>
-                    <td>:<select id="meal" name="meal" >
+                    <td>
+                        <p>Contact no:</p>
+                        <p> <input type="text" name="contact" id=""   required></p>
+                    </td>
+                    <td>
+                        <p>Email Address:</p>
+                        <p><input type="text" name="email" id=""  required></p>
+                    </td>
+                    <td>
+                        <p>Meals:</p>
+                        <p><select id="meal" name="meal" >
                             <option value="select" selected>Choose...</option>
                             <option value="Yes" >Yes</option>
                             <option value="No" >No</option>
-                            </select></td></td>
+                            </select></p>
+                    </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+
+                   Click "genarate button" For Cost: <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <p>-----------------------------------------------------------------
+                        </p>
+                    </td>
+                </tr>
+
+                <tr id="count">
+                    <td><p id="ad"></p></td>
+                    <td><input type="text" name="adcost" id="ad-cost"  ></td>
+                </tr>
+                <tr  id="count">
+                    <td><p id="chi-pass-co"></p></td>
+                    <td><input type="text" name="chicost" id="chi-cost"  ></td>
+                </tr>
+                <tr id="count">
+                    <td><p id="pass-meal-co"></p></td>
+                    <td><input type="text" name="mealcost" id="meal-cost"  ></td>
+                </tr>
+                <tr id="count">
+                    <td><p id="tot-pass-cost"></p></td>
+                    <td><input type="text" name="totalcost" id="total-cost" ></td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                    <p>-----------------------------------------------------------------
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> Safari Guide's Name :</p>
+                        <p><select id="guide" name="guide" >
+                            <option value="choose" selected>Choose...</option>
+                            <option value="weerasinghe" >N.K weerasinghe</option>
+                            <option value="Damith" >D.K.S. Damith</option>
+                            </select></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                    <p>-----------------------------------------------------------------
+                        </p>
+
+                    </td>
+
+                <tr>
+
+                <td colspan="2">
+                <input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" onclick="Clean()" id="clear-btn"> 
+                </td>
+
+                </tr>
+
+            
+                    
+                
+<!--                
+                
+               
+               
+               
+            
+              
                 <tr>
                     <td></td>
                     <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" onclick="Clean()" id="clear-btn"> </td>
@@ -375,7 +508,7 @@ if(isset($_POST['submit'])){
                 </tr>
                 <tr>
 
-                </tr>
+                </tr> -->
 
 
 
@@ -384,8 +517,8 @@ if(isset($_POST['submit'])){
                 </table>
 
         </form>
-</div>
-<div class="col" id="row5-col2">
+
+<div class="row" id="row6">
    <h3>All Bills Details Section</h3>
    <div class="search-container">
         <h5>Search for :</h5>
@@ -434,7 +567,6 @@ if(isset($_POST['submit'])){
 
 
 
-</div>
      </div>
      <!-- Bill form END -->
 
