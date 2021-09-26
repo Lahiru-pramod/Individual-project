@@ -6,6 +6,23 @@ function genarate(){
     var meal = document.getElementById("meal").value;
     var package = document.getElementById("package").value;
 
+    var normaladult= parseInt(document.getElementById("price-board").rows[2].cells.item(1).innerHTML);
+    var normalchild= parseInt(document.getElementById("price-board").rows[2].cells.item(2).innerHTML);
+    var normalmeal= parseInt(document.getElementById("price-board").rows[2].cells.item(3).innerHTML);
+
+    var normaladult10= parseInt(document.getElementById("price-board").rows[3].cells.item(1).innerHTML);
+    var normalchild10= parseInt(document.getElementById("price-board").rows[3].cells.item(2).innerHTML);
+    var normalmeal10= parseInt(document.getElementById("price-board").rows[3].cells.item(3).innerHTML);
+
+    var normaladult20= parseInt(document.getElementById("price-board").rows[4].cells.item(1).innerHTML);
+    var normalchild20= parseInt(document.getElementById("price-board").rows[4].cells.item(2).innerHTML);
+    var normalmeal20= parseInt(document.getElementById("price-board").rows[4].cells.item(3).innerHTML);
+
+    var normaladult30= parseInt(document.getElementById("price-board").rows[5].cells.item(1).innerHTML);
+    var normalchild30= parseInt(document.getElementById("price-board").rows[5].cells.item(2).innerHTML);
+    var normalmeal30= parseInt(document.getElementById("price-board").rows[5].cells.item(3).innerHTML);
+
+
     if (package == "normal"){
       
       
@@ -31,8 +48,8 @@ function genarate(){
     }
     if(adult != ""){
 
-        var adcost = adult * 500 +".00" ;
-        var text = "Adult Passanges"+"("+adult+"*"+"500"+")";
+        var adcost = adult * normaladult +".00" ;
+        var text = "Adult Passanges"+"("+adult+"*"+normaladult+")";
         
         document.getElementById("ad").innerHTML = text;
         document.getElementById("ad-cost").value = adcost;
@@ -48,8 +65,8 @@ function genarate(){
     }
     if(child != ""){
 
-        var childcost = child * 250 +".00" ;
-        var text = "Child Passanges"+"("+child+"*"+"250"+")";
+        var childcost = child * normalchild +".00" ;
+        var text = "Child Passanges"+"("+child+"*"+normalchild+")";
         
         document.getElementById("chi-pass-co").innerHTML = text;
         document.getElementById("chi-cost").value = childcost;
@@ -60,13 +77,13 @@ function genarate(){
 
         var all = adult+child;
 
-        var mealcost = all * 300+".00" ;
-        var text = "Meals Charges"+"("+all+"*"+"300"+")";
+        var mealcost = all * normalmeal+".00" ;
+        var text = "Meals Charges"+"("+all+"*"+normalmeal+")";
         
         document.getElementById("pass-meal-co").innerHTML = text;
         document.getElementById("meal-cost").value = mealcost;
 
-        var total = (adult*500)+(child*250)+(all*300) +".00";
+        var total = (adult*normaladult)+(child*normalchild)+(all*normalmeal) +".00";
         var text = "Total Charge";
     
     
@@ -80,7 +97,7 @@ function genarate(){
         document.getElementById("pass-meal-co").innerHTML = "";
         document.getElementById("meal-cost").value = "";
 
-        var total = (adult*500)+(child*250)+".00";
+        var total = (adult*normaladult)+(child*normalchild)+".00";
         var text = "Total Charge";
     
     
@@ -93,8 +110,273 @@ function genarate(){
 
   }
 
-    
-    }
+
+if (package == "10up"){
+      
+      
+
+  if(isNaN(adult) || adult==0){
+
+  
+  
+       alert("your form Adult section is empty. Please Fill it & try again");
+       document.getElementById("ad").innerHTML ="";
+       document.getElementById("ad-cost").value = "";
+       document.getElementById("chi-pass-co").innerHTML = "";
+       document.getElementById("chi-cost").value = "";
+       document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+      document.getElementById("tot-pass-cost").innerHTML = "";
+      document.getElementById("total-cost").value= "";
+
+
+       return false;
+       
+
+  }
+  if(adult != ""){
+
+      var adcost = adult * normaladult10 +".00" ;
+      var text = "Adult Passanges"+"("+adult+"*"+normaladult10+")";
+      
+      document.getElementById("ad").innerHTML = text;
+      document.getElementById("ad-cost").value = adcost;
+
+  }
+  if(isNaN(child) || child == 0){
+
+      child = 0;
+      document.getElementById("chi-pass-co").innerHTML = "";
+      document.getElementById("chi-cost").value = "";
+
+
+  }
+  if(child != ""){
+
+      var childcost = child * normalchild10 +".00" ;
+      var text = "Child Passanges"+"("+child+"*"+normalchild10+")";
+      
+      document.getElementById("chi-pass-co").innerHTML = text;
+      document.getElementById("chi-cost").value = childcost;
+
+
+  }
+  if(meal == "Yes"){
+
+      var all = adult+child;
+
+      var mealcost = all * normalmeal10+".00" ;
+      var text = "Meals Charges"+"("+all+"*"+normalmeal10+")";
+      
+      document.getElementById("pass-meal-co").innerHTML = text;
+      document.getElementById("meal-cost").value = mealcost;
+
+      var total = (adult*normaladult10)+(child*normalchild10)+(all*normalmeal10) +".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+  
+
+  }if(meal != "Yes" ){
+
+      document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+
+      var total = (adult*normaladult10)+(child*normalchild10)+".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+
+
+  }
+
+}
+
+
+if (package == "20up"){
+      
+      
+
+  if(isNaN(adult) || adult==0){
+
+  
+  
+       alert("your form Adult section is empty. Please Fill it & try again");
+       document.getElementById("ad").innerHTML ="";
+       document.getElementById("ad-cost").value = "";
+       document.getElementById("chi-pass-co").innerHTML = "";
+       document.getElementById("chi-cost").value = "";
+       document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+      document.getElementById("tot-pass-cost").innerHTML = "";
+      document.getElementById("total-cost").value= "";
+
+
+       return false;
+       
+
+  }
+  if(adult != ""){
+
+      var adcost = adult * normaladult20 +".00" ;
+      var text = "Adult Passanges"+"("+adult+"*"+normaladult20+")";
+      
+      document.getElementById("ad").innerHTML = text;
+      document.getElementById("ad-cost").value = adcost;
+
+  }
+  if(isNaN(child) || child == 0){
+
+      child = 0;
+      document.getElementById("chi-pass-co").innerHTML = "";
+      document.getElementById("chi-cost").value = "";
+
+
+  }
+  if(child != ""){
+
+      var childcost = child * normalchild20 +".00" ;
+      var text = "Child Passanges"+"("+child+"*"+normalchild20+")";
+      
+      document.getElementById("chi-pass-co").innerHTML = text;
+      document.getElementById("chi-cost").value = childcost;
+
+
+  }
+  if(meal == "Yes"){
+
+      var all = adult+child;
+
+      var mealcost = all * normalmeal20+".00" ;
+      var text = "Meals Charges"+"("+all+"*"+normalmeal20+")";
+      
+      document.getElementById("pass-meal-co").innerHTML = text;
+      document.getElementById("meal-cost").value = mealcost;
+
+      var total = (adult*normaladult20)+(child*normalchild20)+(all*normalmeal20) +".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+  
+
+  }if(meal != "Yes" ){
+
+      document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+
+      var total = (adult*normaladult20)+(child*normalchild20)+".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+
+
+  }
+
+}
+
+if (package == "30up"){
+      
+      
+
+  if(isNaN(adult) || adult==0){
+
+  
+  
+       alert("your form Adult section is empty. Please Fill it & try again");
+       document.getElementById("ad").innerHTML ="";
+       document.getElementById("ad-cost").value = "";
+       document.getElementById("chi-pass-co").innerHTML = "";
+       document.getElementById("chi-cost").value = "";
+       document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+      document.getElementById("tot-pass-cost").innerHTML = "";
+      document.getElementById("total-cost").value= "";
+
+
+       return false;
+       
+
+  }
+  if(adult != ""){
+
+      var adcost = adult * normaladult30 +".00" ;
+      var text = "Adult Passanges"+"("+adult+"*"+normaladult30+")";
+      
+      document.getElementById("ad").innerHTML = text;
+      document.getElementById("ad-cost").value = adcost;
+
+  }
+  if(isNaN(child) || child == 0){
+
+      child = 0;
+      document.getElementById("chi-pass-co").innerHTML = "";
+      document.getElementById("chi-cost").value = "";
+
+
+  }
+  if(child != ""){
+
+      var childcost = child * normalchild30 +".00" ;
+      var text = "Child Passanges"+"("+child+"*"+normalchild30+")";
+      
+      document.getElementById("chi-pass-co").innerHTML = text;
+      document.getElementById("chi-cost").value = childcost;
+
+
+  }
+  if(meal == "Yes"){
+
+      var all = adult+child;
+
+      var mealcost = all * normalmeal30+".00" ;
+      var text = "Meals Charges"+"("+all+"*"+normalmeal30+")";
+      
+      document.getElementById("pass-meal-co").innerHTML = text;
+      document.getElementById("meal-cost").value = mealcost;
+
+      var total = (adult*normaladult30)+(child*normalchild30)+(all*normalmeal30) +".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+  
+
+  }if(meal != "Yes" ){
+
+      document.getElementById("pass-meal-co").innerHTML = "";
+      document.getElementById("meal-cost").value = "";
+
+      var total = (adult*normaladult30)+(child*normalchild30)+".00";
+      var text = "Total Charge";
+  
+  
+      document.getElementById("tot-pass-cost").innerHTML = text;
+      document.getElementById("total-cost").value = total ;
+
+
+
+  }
+
+}
+
+
+}
+
+
 
     function Clean(){
 

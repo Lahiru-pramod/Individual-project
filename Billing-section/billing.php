@@ -37,11 +37,12 @@ if(isset($_POST['submit'])){
     $chicost = mysqli_real_escape_string($connection, $_POST['chicost']);
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
+    $guide = mysqli_real_escape_string($connection, $_POST['guide']);
 
     $query= "INSERT INTO bills (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);
@@ -248,7 +249,7 @@ if(isset($_POST['submit'])){
                 while($row = mysqli_fetch_array($result)){
 
          echo" <td>".$row['Adult']."</td>";
-         echo"<td>".$row['child']."</td>";
+         echo"<td >".$row['child']."</td>";
           echo"<td>".$row['meal']."</td>";
 
           
@@ -401,7 +402,7 @@ if(isset($_POST['submit'])){
                     <td>
                         <p>Meals:</p>
                         <p><select id="meal" name="meal" >
-                            <option value="select" selected>Choose...</option>
+                            <option value="notvalue" selected>Choose...</option>
                             <option value="Yes" >Yes</option>
                             <option value="No" >No</option>
                             </select></p>
