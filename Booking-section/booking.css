@@ -109,8 +109,8 @@
 #row3 {
   text-align: center;
   margin-top: 0px;
-  background-color: black;
-  color: #cac6c6;
+  background-color: #7ebaeb;
+  color: black;
   padding-top: 60px;
   border-radius: 25px;
 }
@@ -124,7 +124,7 @@
 
 #price-board {
   width: 900px;
-  background: black;
+  background: #7ebaeb;
   color: white;
 }
 
@@ -174,11 +174,11 @@
   border: none;
 }
 
-#form-table td {
+#form-table td, tr {
   border: none;
   margin: 0px;
   padding: 0px;
-  vertical-align: middle;
+  text-align: left;
 }
 
 #confirm-btn {
@@ -256,6 +256,15 @@ table {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#row52 {
+  text-align: center;
+  margin-top: 0px;
+  background-color: black;
+  color: white;
+  padding-top: 5px;
+  border-radius: 25px;
+}
+
 #bill-search-button {
   padding: 3px 25px;
   background-color: #6969f3;
@@ -267,12 +276,13 @@ table {
 
 #details-btn {
   padding: 3px 15px;
-  background-color: #e487ec;
+  background-color: #0479ff;
   color: white;
   outline: none;
   border: none;
   border-radius: 3px;
   text-decoration: none;
+  width: 100px;
 }
 
 #search-bar {
@@ -281,10 +291,31 @@ table {
 
 #searchbox {
   width: 100%;
+  padding: 5px;
+  color: #17174e;
+  border-radius: 10px;
+  outline: none;
+  border-color: brown;
+  font-weight: bold;
 }
 
 #tbody {
   overflow: hidden;
+}
+
+#Booking-details td, tr {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#delete {
+  background: #fc5252;
+  padding: 3px 15px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
 }
 
 @media screen and (max-height: 750px) {
@@ -295,4 +326,4 @@ table {
     font-size: 18px;
   }
 }
-/*# sourceMappingURL=billing.css.map */
+/*# sourceMappingURL=booking.css.map */

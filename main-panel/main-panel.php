@@ -77,7 +77,7 @@
                 </td>
                 <td id="menu-col2">
 
-                <h3>  <a href="#">Bookings</a></h3>
+                <h3>  <a href="../Booking-section/booking.php">Bookings</a></h3>
 
                 </td>
            

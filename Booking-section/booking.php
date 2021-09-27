@@ -37,12 +37,11 @@ if(isset($_POST['submit'])){
     $chicost = mysqli_real_escape_string($connection, $_POST['chicost']);
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
-    $guide = mysqli_real_escape_string($connection, $_POST['guide']);
 
-    $query= "INSERT INTO bills (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide";
+    $query= "INSERT INTO booking (";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);
@@ -78,8 +77,8 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./billing.css?v=<?php echo time(); ?> ">
-    <script src="./billing.js?v=<?php echo time(); ?>" type="text/javascript"></script>
+    <link rel="stylesheet" href="./booking.css?v=<?php echo time(); ?> ">
+    <script src="./booking.js?v=<?php echo time(); ?>" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/7c77a89f23.js"></script>
     <script src="https://kit.fontawesome.com/b961a2b7a4.js" crossorigin="anonymous"></script>
@@ -220,7 +219,7 @@ if(isset($_POST['submit'])){
         </div>
 
       <div class="row " id="row3">
-          <h3>- Billing Section - </h3>
+          <h3>- Booking Section - </h3>
       </div>
   <!-- Prices normal and packages....................... -->
 
@@ -318,7 +317,7 @@ if(isset($_POST['submit'])){
 
 
       <div class="row" id="row4">
-          <h4> -- Bill Create & Find Section --</h4>
+          <h4> -- Create booking & Find Section --</h4>
       </div>
 
       <!-- bill form -->
@@ -326,7 +325,7 @@ if(isset($_POST['submit'])){
       <div class="row" id="row5">
           <!-- <div class="col"> -->
 
-         <form action="billing.php" method="POST" enctype="multipart/form-data" id="form-menu">
+         <form action="booking.php" method="POST" enctype="multipart/form-data" id="form-menu">
 
                 <table class="table" id="form-table">
 
@@ -340,13 +339,14 @@ if(isset($_POST['submit'])){
                     <p><input type="text" name="orderid" id="" required ></p>
                     </td>
                     <td>
-                    <p>Traveling date:</p>
+                    <p>Booking date:</p>
                     <p><input type="date" name="bookingdate" id="" required ></p>
                     </td>
                     <td colspan="2">
-                    <p>Traveling time:</p>
+                    <p>Booking time:</p>
                     <p> <select id="bookingtime" name="bookingtime" required >
-                    <option value="8 am - 10 am">Morning 8 - 10 am</option>
+                            <option hidden selected>select time...</option>
+                            <option value="8 am - 10 am">Morning 8 - 10 am</option>
                             <option value="10am - 12 am">Morning 10 - 12 am</option>
                             <option value="2 pm - 4 pm">Evening 2 - 4 pm</option>
                             <option value="4 pm - 6 pm">Evening 4 - 6 pm</option>
@@ -444,22 +444,6 @@ if(isset($_POST['submit'])){
 
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <p> Safari Guide's Name :</p>
-                        <p><select id="guide" name="guide" >
-                            <option value="choose" selected>Choose...</option>
-                            <option value="weerasinghe" >N.K weerasinghe</option>
-                            <option value="Damith" >D.K.S. Damith</option>
-                            </select></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="5">
-                    <p>-----------------------------------------------------------------
-                        </p>
-
-                    </td>
 
                 <tr>
 
@@ -469,57 +453,14 @@ if(isset($_POST['submit'])){
 
                 </tr>
 
-            
-                    
-                
-<!--                
-                
-               
-               
-               
-            
-              
-                <tr>
-                    <td></td>
-                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" onclick="Clean()" id="clear-btn"> </td>
-                </tr>
-                <tr>
-                    <td >
-                        <tr id="count">
-                            <td><p id="ad"></p></td>
-                            <td><input type="text" name="adcost" id="ad-cost"  ></td>
-                        </tr>
-                        <tr  id="count">
-                            <td><p id="chi-pass-co"></p></td>
-                            <td><input type="text" name="chicost" id="chi-cost"  ></td>
-                        </tr>
-                        <tr id="count">
-                            <td><p id="pass-meal-co"></p></td>
-                            <td><input type="text" name="mealcost" id="meal-cost"  ></td>
-                        </tr>
-                        <tr id="count">
-                            <td><p id="tot-pass-cost"></p></td>
-                            <td><input type="text" name="totalcost" id="total-cost" ></td>
-                        </tr>
-
-
-                    </td>
-
-                </tr>
-                <tr>
-
-                </tr> -->
-
-
-
-
-
-                </table>
+            </table>
 
         </form>
 
-<div class="row" id="row6">
-   <h3>All Bills Details Section</h3>
+<div class="row" id="row52">
+   <h3>All Booking Details Section</h3>
+</div>
+<div class="row" id="row6"></div>
    <div class="search-container">
         <h5>Search for :</h5>
         <div class="search-bar" id="search-bar">
@@ -531,15 +472,17 @@ if(isset($_POST['submit'])){
 
 
 
-  <table class="table" id="Bill-table">
+  <table class="table" id="Booking-details">
 
   <thead>
 
       <tr>
-          <th scope="col">Bill ID</th>
+          <th scope="col">Booking ID</th>
           <th>Orderer ID</th>
           <th>Date</th>
+          <th>Time</th>
           <th>status</th>
+          <th>Status 2</th>
       </tr>
       </thead>
 
@@ -547,7 +490,7 @@ if(isset($_POST['submit'])){
       <?php
 
             $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
-            $sql = "SELECT * FROM bills order by bill_ID desc";
+            $sql = "SELECT * FROM booking order by bill_ID desc";
             $result = mysqli_query($connection , $sql);
             while($row = mysqli_fetch_array($result)){
 
@@ -555,7 +498,9 @@ if(isset($_POST['submit'])){
         echo  "<td>".$row['bill_ID']."</td>";
           echo"<td>".$row['Orderer_ID']."</td>";
           echo"<td>".$row['Booking_date']."</td>";
-          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Print</a></td>";
+          echo"<td>".$row['Booking_time']."</td>";
+          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Create a Bill</a></td>";
+          echo"<td> <a href='./delete.php?id=".$row['bill_ID']."' id='delete' > Booking Cancel </td>";
       echo'</tr>';
             }
       ?>

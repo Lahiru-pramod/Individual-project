@@ -107,8 +107,8 @@ $maincolor: yellowgreen;
 
     text-align: center;
     margin-top: 0px;
-    background-color: rgb(0, 0, 0) ;
-    color: rgb(202, 198, 198);
+    background-color:rgb(126, 186, 235);
+    color: rgb(0, 0, 0);
     padding-top: 60px;
     border-radius: 25px;
    
@@ -127,7 +127,7 @@ $maincolor: yellowgreen;
 #price-board{
 
     width: 900px;
-    background: rgb(0, 0, 0);
+    background: rgb(126, 186, 235);
     color: white;
 }
 
@@ -177,13 +177,14 @@ $maincolor: yellowgreen;
 
 
 }
-#form-table td{
+#form-table td,tr{
 
     border: none;
     margin: 0px;
     padding: 0px;
-    vertical-align: middle;
+    text-align: left;
 }
+
 
 #confirm-btn{
 
@@ -265,6 +266,20 @@ table{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#row52  {
+
+    text-align: center;
+    margin-top: 0px;
+    background-color:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding-top: 5px;
+    border-radius: 25px;
+   
+    
+
+    
+}
+
 // Search section
 
 #bill-search-button{
@@ -279,12 +294,13 @@ table{
 #details-btn{
 
     padding: 3px 15px;
-    background-color: rgb(228, 135, 236);
+    background-color: rgb(4, 121, 255);
     color: white;
     outline: none;
     border: none;
     border-radius: 3px;
     text-decoration: none;
+    width: 100px;
     
 }
 #search-bar{
@@ -294,10 +310,32 @@ table{
 #searchbox{
 
     width: 100%;
+    padding: 5px;
+    color: rgb(23, 23, 78);
+    border-radius: 10px;
+    outline: none;
+    border-color: brown;
+    font-weight: bold;
 }
 #tbody{
 
     overflow: hidden;
+}
+#Booking-details td , tr{
+
+    text-align: center;
+    vertical-align: middle;
+ }
+#delete{
+
+    background: rgb(252, 82, 82);
+    padding: 3px 15px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+
 }
 
 
