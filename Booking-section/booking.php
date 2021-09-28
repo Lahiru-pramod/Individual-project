@@ -502,8 +502,8 @@ if(isset($_POST['submit'])){
           echo"<td>".$row['Orderer_ID']."</td>";
           echo"<td id='bookingdatetable'>".$row['Booking_date']."</td>";
           echo"<td id='bookingtimetable'>".$row['Booking_time']."</td>";
-          echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Create a Bill</a></td>";
-          echo"<td> <a href='./delete.php?id=".$row['bill_ID']."' id='delete' > Booking Cancel </td>";
+          echo"<td><a href='./billing-convert.php?id=".$row['bill_ID']."' id='details-btn'>Create a Bill</a></td>";
+          echo"<td> <a href='./delete.php?id=".$row['bill_ID']."' id='delete' > Booking Cancel or remove </td>";
       echo'</tr>';
             }
       ?>

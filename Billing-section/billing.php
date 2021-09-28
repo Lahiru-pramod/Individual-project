@@ -448,9 +448,21 @@ if(isset($_POST['submit'])){
                     <td>
                         <p> Safari Guide's Name :</p>
                         <p><select id="guide" name="guide" >
-                            <option value="choose" selected>Choose...</option>
-                            <option value="weerasinghe" >N.K weerasinghe</option>
-                            <option value="Damith" >D.K.S. Damith</option>
+                            <option hidden>Choose...</option>
+
+
+                            <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM employee where Position='Guide' ";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+                    $emvalue = $row['Name'];
+
+                           echo "<option value='$emvalue' >".$row['Name']."</option>";
+                }
+                ?>
+
                             </select></p>
                     </td>
                 </tr>
@@ -469,50 +481,7 @@ if(isset($_POST['submit'])){
 
                 </tr>
 
-            
-                    
-                
-<!--                
-                
-               
-               
-               
-            
-              
-                <tr>
-                    <td></td>
-                    <td> <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn"><input type="submit" name="submit" value="Confirm" id="confirm-btn"> <input type="reset" value="Clear" onclick="Clean()" id="clear-btn"> </td>
-                </tr>
-                <tr>
-                    <td >
-                        <tr id="count">
-                            <td><p id="ad"></p></td>
-                            <td><input type="text" name="adcost" id="ad-cost"  ></td>
-                        </tr>
-                        <tr  id="count">
-                            <td><p id="chi-pass-co"></p></td>
-                            <td><input type="text" name="chicost" id="chi-cost"  ></td>
-                        </tr>
-                        <tr id="count">
-                            <td><p id="pass-meal-co"></p></td>
-                            <td><input type="text" name="mealcost" id="meal-cost"  ></td>
-                        </tr>
-                        <tr id="count">
-                            <td><p id="tot-pass-cost"></p></td>
-                            <td><input type="text" name="totalcost" id="total-cost" ></td>
-                        </tr>
-
-
-                    </td>
-
-                </tr>
-                <tr>
-
-                </tr> -->
-
-
-
-
+    
 
                 </table>
 
@@ -539,7 +508,9 @@ if(isset($_POST['submit'])){
           <th scope="col">Bill ID</th>
           <th>Orderer ID</th>
           <th>Date</th>
+          <th>Time</th>
           <th>status</th>
+          <th>status 2</th>
       </tr>
       </thead>
 
@@ -555,7 +526,9 @@ if(isset($_POST['submit'])){
         echo  "<td>".$row['bill_ID']."</td>";
           echo"<td>".$row['Orderer_ID']."</td>";
           echo"<td>".$row['Booking_date']."</td>";
+          echo"<td>".$row['Booking_time']."</td>";
           echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Print</a></td>";
+          echo"<td> <a href='./delete.php?id=".$row['bill_ID']."' id='delete' > Bill Cancel or Remove</td>";
       echo'</tr>';
             }
       ?>

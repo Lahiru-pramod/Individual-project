@@ -181,6 +181,16 @@
   vertical-align: middle;
 }
 
+#delete {
+  background: #fc5252;
+  padding: 3px 15px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
 #confirm-btn {
   background-color: #239b23;
   padding: 5px 10px;
