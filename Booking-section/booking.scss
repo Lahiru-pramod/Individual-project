@@ -232,6 +232,34 @@ $maincolor: yellowgreen;
 background-color:rgb(115, 194, 115);
 }
 
+#Validatedatetime{
+
+    background: rgb(26, 151, 26);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+#Validatedatetime:focus{
+
+    background: #a1df9f;
+
+}
+#find{
+
+    background: rgb(26, 151, 26);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 7px;
+    
+}
+#find:focus{
+
+    background: #a1df9f;
+
+
+}
+
 #count{
 
     line-height: 15px;
@@ -309,13 +337,25 @@ table{
 }
 #searchbox{
 
-    width: 100%;
+    width: 40%;
     padding: 5px;
     color: rgb(23, 23, 78);
     border-radius: 10px;
     outline: none;
     border-color: brown;
     font-weight: bold;
+    justify-content: left;
+}
+#searchbox2{
+
+    width: 40%;
+    padding: 5px;
+    color: rgb(23, 23, 78);
+    border-radius: 10px;
+    outline: none;
+    border-color: brown;
+    font-weight: bold;
+    justify-content: left;
 }
 #tbody{
 

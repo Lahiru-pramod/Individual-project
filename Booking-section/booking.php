@@ -5,6 +5,7 @@
 
 if(isset($_POST['submit'])){
 
+
     // $orderer= $_POST['orderer'];
     // $ordID = $_POST['orderid'];
     // $bookdate =$_POST['bookingdate'];
@@ -38,6 +39,7 @@ if(isset($_POST['submit'])){
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
 
+
     $query= "INSERT INTO booking (";
     $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
     $query .= ") VALUES (";
@@ -47,7 +49,7 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($connection, $query);
      if ($result){
 // if successful
-     echo'<script> alert("Bill is successfully Added!");
+     echo'<script> alert("Booking is successfully Added!");
              </script>';
 
      }else{
@@ -340,7 +342,7 @@ if(isset($_POST['submit'])){
                     </td>
                     <td>
                     <p>Booking date:</p>
-                    <p><input type="date" name="bookingdate" id="" required ></p>
+                    <p><input type="date" name="bookingdate" id="bookingdatevalue" required ></p>
                     </td>
                     <td colspan="2">
                     <p>Booking time:</p>
@@ -413,6 +415,7 @@ if(isset($_POST['submit'])){
                    Click "genarate button" For Cost: <input type="button" onclick="JavaScript:genarate()" value="Genarate Cost" id="cost-btn">
 
                     </td>
+                  
                 </tr>
                 <tr>
                     <td colspan="5">
@@ -464,7 +467,7 @@ if(isset($_POST['submit'])){
    <div class="search-container">
         <h5>Search for :</h5>
         <div class="search-bar" id="search-bar">
-      <input type="text" onkeyup="search()" placeholder="Enter Orderer NIC ..." name="search" id="searchbox">
+      <input type="text" onkeyup="search()" placeholder="Enter Orderer NIC ..." name="search" id="searchbox">  <input type="date" placeholder="Enter Date ..." name="search" id="searchbox2"> <input type="button" id="find" onclick="searchdate()" value="Find">
         </div>
   </div>
 
@@ -497,8 +500,8 @@ if(isset($_POST['submit'])){
       echo'<tr>';
         echo  "<td>".$row['bill_ID']."</td>";
           echo"<td>".$row['Orderer_ID']."</td>";
-          echo"<td>".$row['Booking_date']."</td>";
-          echo"<td>".$row['Booking_time']."</td>";
+          echo"<td id='bookingdatetable'>".$row['Booking_date']."</td>";
+          echo"<td id='bookingtimetable'>".$row['Booking_time']."</td>";
           echo"<td><a href='../Bill-details/Bill-details.html?id=".$row['bill_ID']."' id='details-btn'>Create a Bill</a></td>";
           echo"<td> <a href='./delete.php?id=".$row['bill_ID']."' id='delete' > Booking Cancel </td>";
       echo'</tr>';

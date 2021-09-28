@@ -227,6 +227,28 @@
   background-color: #73c273;
 }
 
+#Validatedatetime {
+  background: #1a971a;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+#Validatedatetime:focus {
+  background: #a1df9f;
+}
+
+#find {
+  background: #1a971a;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+#find:focus {
+  background: #a1df9f;
+}
+
 #count {
   line-height: 15px;
 }
@@ -290,13 +312,29 @@ table {
 }
 
 #searchbox {
-  width: 100%;
+  width: 40%;
   padding: 5px;
   color: #17174e;
   border-radius: 10px;
   outline: none;
   border-color: brown;
   font-weight: bold;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+#searchbox2 {
+  width: 40%;
+  padding: 5px;
+  color: #17174e;
+  border-radius: 10px;
+  outline: none;
+  border-color: brown;
+  font-weight: bold;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 #tbody {
