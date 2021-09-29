@@ -85,7 +85,7 @@ if(isset($_POST['submit'])){
     <script src="https://use.fontawesome.com/7c77a89f23.js"></script>
     <script src="https://kit.fontawesome.com/b961a2b7a4.js" crossorigin="anonymous"></script>
     <script src="../common-code/common.js?v=<?php echo time(); ?>"></script>
-    <title>Billing section</title>
+    <title>Booking section</title>
 </head>
 <body>
 
@@ -493,7 +493,11 @@ if(isset($_POST['submit'])){
       <?php
 
             $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
-            $sql = "SELECT * FROM booking order by bill_ID desc";
+            $sql = "SELECT booking.bill_ID ,booking.Orderer_ID, booking.Booking_date, booking.Booking_time 
+             FROM booking LEFT JOIN bills ON 
+            booking.Orderer_ID = bills.Orderer_ID
+            WHERE bills.Orderer_ID is NULL  order by bill_ID desc";
+
             $result = mysqli_query($connection , $sql);
             while($row = mysqli_fetch_array($result)){
 

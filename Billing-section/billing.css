@@ -191,6 +191,10 @@
   text-decoration: none;
 }
 
+#timedate {
+  color: #001aff;
+}
+
 #confirm-btn {
   background-color: #239b23;
   padding: 5px 10px;

@@ -167,7 +167,7 @@ if(isset($_POST['submit'])){
            </td>
            <td id="menu-col2">
 
-           <h3>  <a href="#">Bookings</a></h3>
+           <h3>  <a href="../Booking-section/booking.php">Bookings</a></h3>
 
            </td>
 
@@ -311,6 +311,12 @@ if(isset($_POST['submit'])){
 
 
       </table>
+
+      </div>
+
+      <div class="row" id="timedate">
+
+      <h4>Today Date & Time :</h4> <h4></h4>
 
       </div>
 
