@@ -316,7 +316,7 @@ if(isset($_POST['submit'])){
 
       <div class="row" id="timedate">
 
-      <h4>Today Date & Time :</h4> <h4></h4>
+      <i class="fa fa-clock-o" aria-hidden="true"></i><h4 id="datetimeonline">Today Date & Time :</h4>
 
       </div>
 

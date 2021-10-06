@@ -8,10 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/7c77a89f23.js"></script>
     <script src="https://kit.fontawesome.com/b961a2b7a4.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="./main-panel.js?v=<?php echo time(); ?>"></script>
     <title>Captain-cruise</title>
 </head>
-<body>
+<body onload="initClock()">
     <div id="mySidenav" class="sidenav">
         <div class="logo" id="logo"><i class="fas fa-anchor"></i></div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -111,7 +112,7 @@
         </table>
       </div>
 
-      <div class="container-xxl">
+      <div class="container-fluid">
          <div class="row fixed-top" id="row1">
             <div class="col-8" id="col1">
                 <h3><i class="fas fa-anchor"></i> Captain Cruise</h3>
@@ -122,9 +123,68 @@
         </div>
         <div class="row" id="row2">
 
-        </div>  
+          <div class="col" id="row2-col1">
+
+              <h2>Dashboard</h2>
+
+          </div>
+          <div class="col" id="row-col2">
+
+          <div class="date">
+              <h4>
+              <span id="dayname"></span>,
+              <span id="month"></span>
+              <span id="daynum"></span>,
+              <span id="year"></span>
+              </h4>
+          </div>
+          <div class="time">
+              <h4>
+              <span id="hour"></span>.
+              <span id="min"></span>.
+              <span id="sec"> </span>
+              <span id="period"></span>
+              </h4>
+
+          </div>
+
+          </div>
+
+          <div class="row">
+            <h5>
+            <span>Hi! Check E-mails & Facebook :</span>
+            <span id="icon"><a href="" id="iconmail"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mail</a></span>
+            <span id="icon"><a href="" id="iconfb"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></span>
+            </h5>
+
+        </div>
+
+        </div> 
+
+        <div class="row pt-2" id="row3">
+
+
+        
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     </div>
       
-  
 </body>
 </html>

@@ -76,6 +76,38 @@
   width: 90%;
 }
 
+#row2 {
+  margin-top: 70px;
+  padding: 10px 10px;
+  background: black;
+  color: #ffffff;
+}
+
+#row-col2 {
+  text-align: right;
+}
+
+.time {
+  color: #4e6eff;
+}
+
+#icon a {
+  text-decoration: none;
+  margin-left: 10px;
+  width: px;
+  padding: 3px 7px;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+#iconmail {
+  background: red;
+}
+
+#iconfb {
+  background: #2c88dd;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
