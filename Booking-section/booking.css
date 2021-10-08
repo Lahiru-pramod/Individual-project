@@ -356,7 +356,17 @@ table {
   text-decoration: none;
 }
 
-@media screen and (max-height: 750px) {
+#timedate {
+  color: #883e82;
+}
+
+#timeanddate {
+  background: #bbb9b9;
+  padding: 2px 5px;
+  border-radius: 14px;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }

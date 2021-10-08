@@ -87,7 +87,7 @@ if(isset($_POST['submit'])){
     <script src="../common-code/common.js?v=<?php echo time(); ?>"></script>
     <title>Booking section</title>
 </head>
-<body>
+<body onload="initClocks()">
 
 <div id="mySidenav" class="sidenav">
         <div class="logo" id="logo"><i class="fas fa-anchor"></i></div>
@@ -313,6 +313,21 @@ if(isset($_POST['submit'])){
 
       </table>
 
+      </div>
+
+      <div class="row" id="timedate">
+       <h5 id="timeanddate">
+      <span id="datetimeonline"><i class="fa fa-clock-o" aria-hidden="true"></i> Today Date & Time :</span>
+              <span id="dayname"></span>,
+              <span id="month"></span>
+              <span id="daynum"></span>,
+              <span id="year"></span> -----
+              <span id="hour"></span>.
+              <span id="min"></span>.
+              <span id="sec"> </span>
+              <span id="period"></span>
+              </h5>
+              
       </div>
 
 

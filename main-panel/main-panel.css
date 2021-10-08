@@ -81,6 +81,8 @@
   padding: 10px 10px;
   background: black;
   color: #ffffff;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.2) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.2) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 #row-col2 {
@@ -88,24 +90,28 @@
 }
 
 .time {
-  color: #4e6eff;
+  color: #c45eff;
 }
 
 #icon a {
   text-decoration: none;
   margin-left: 10px;
-  width: px;
   padding: 3px 7px;
   border-radius: 15px;
   color: #ffffff;
+  -webkit-transition: ease-in-out 0.7;
+  transition: ease-in-out 0.7;
+  background: #525252;
 }
 
-#iconmail {
+#iconmail:hover {
   background: red;
+  padding: 3px 25px;
 }
 
-#iconfb {
+#iconfb:hover {
   background: #2c88dd;
+  padding: 3px 25px;
 }
 
 @media screen and (max-height: 450px) {
@@ -114,6 +120,15 @@
   }
   .sidenav a {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #row-col2 {
+    display: none;
+  }
+  #checkemail {
+    display: none;
   }
 }
 /*# sourceMappingURL=main-panel.css.map */

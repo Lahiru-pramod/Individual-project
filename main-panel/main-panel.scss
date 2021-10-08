@@ -86,6 +86,7 @@
   padding: 10px 10px;
   background: rgb(0, 0, 0);
   color: #ffffff;
+  box-shadow:rgba(14, 30, 37, 0.20) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 #row-col2{
 
@@ -93,7 +94,7 @@
 }
 .time{
 
-  color: rgb(78, 110, 255);
+  color: rgb(196, 94, 255);
   
   
 }
@@ -102,18 +103,23 @@
 
   text-decoration: none;
   margin-left: 10px;
-  width: px;
-  
   padding: 3px 7px;
   border-radius: 15px;
   color: #ffffff;
+  transition: ease-in-out 0.7;
+  background: #525252;
 }
-#iconmail{
+
+#iconmail:hover{
 
   background: red;
+  padding: 3px 25px;
+
+
 }
-#iconfb{
+#iconfb:hover{
   background: rgb(44, 136, 221);
+  padding: 3px 25px;
 }
 
 
@@ -131,4 +137,19 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }
+
+  @media screen and (max-width: 700px){
+
+    #row-col2{
+
+      display: none;
+
+    }
+
+    #checkemail{
+
+      display: none;
+    }
+
   }

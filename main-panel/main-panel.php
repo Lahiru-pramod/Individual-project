@@ -123,12 +123,12 @@
         </div>
         <div class="row" id="row2">
 
-          <div class="col" id="row2-col1">
+          <div class="col-sm" id="row2-col1">
 
-              <h2>Dashboard</h2>
+              <h2><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</h2>
 
           </div>
-          <div class="col" id="row-col2">
+          <div class="col-sm" id="row-col2">
 
           <div class="date">
               <h4>
@@ -139,12 +139,12 @@
               </h4>
           </div>
           <div class="time">
-              <h4>
-              <span id="hour"></span>.
-              <span id="min"></span>.
+              <h3>
+              <span id="hour"></span> :
+              <span id="min"></span> :
               <span id="sec"> </span>
               <span id="period"></span>
-              </h4>
+              </h3>
 
           </div>
 
@@ -152,9 +152,9 @@
 
           <div class="row">
             <h5>
-            <span>Hi! Check E-mails & Facebook :</span>
-            <span id="icon"><a href="" id="iconmail"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mail</a></span>
-            <span id="icon"><a href="" id="iconfb"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></span>
+            <span id="checkemail">Hi! Check E-mails & Facebook :</span>
+            <span id="icon"><a href="" class="btn" id="iconmail"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mail</a></span>
+            <span id="icon"><a href="" class="btn" id="iconfb"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></span>
             </h5>
 
         </div>
@@ -162,6 +162,16 @@
         </div> 
 
         <div class="row pt-2" id="row3">
+
+        <div class="col-sm">
+
+        <h2>Lahiru pramod de silva</h2>
+
+        </div>
+        <div class="col-sm">
+            <h2>Lahiru pramod de silva</h2>
+        </div>
+
 
 
         

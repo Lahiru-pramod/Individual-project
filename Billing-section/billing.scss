@@ -196,8 +196,14 @@ $maincolor: yellowgreen;
 
 }
 #timedate{
-    color: #001aff;
+    color: #883e82;
     
+}
+#timeanddate{
+
+    background: #bbb9b9;
+    padding: 2px 5px;
+    border-radius: 14px;
 }
 
 #confirm-btn{
@@ -318,7 +324,7 @@ table{
 
 
  
-@media screen and (max-height: 750px) {
+@media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
