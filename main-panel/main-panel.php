@@ -163,14 +163,115 @@
 
         <div class="row pt-2" id="row3">
 
-        <div class="col-sm">
 
-        <h2>Lahiru pramod de silva</h2>
+        <!-- booking -data -->
+
+        <div class="col-sm pt-1" id="booking-data">
+         <div class="row">
+             <h4><i class="fa fa-bookmark" aria-hidden="true"></i> Booking - Summary</h4>
+        </div>
+        <div class="row" id="data-table-row">
+
+        <div class="table-responsive">
+
+        <table class="table table-dark" id="booking-data-table">
+  <thead>
+      <tr>
+          <th scope="col" class="text-center" colspan="7">Today Traveling <span id="blink"> coming up!</span></th>
+      </tr>
+    <tr>
+                <th scope="col" >ID</th>
+                <th scope="col">NIC</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Contact</th>
+                <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>1234567v</td>
+      <td>Damith kumara</td>
+      <td>2021.08.01</td>
+      <td>8am-10am</td>
+      <td>0912476528</td>
+      <td><span id="blink-table"> Call..</span></td>
+            
+      
+    </tr>
+   
+   
+  </tbody>
+</table>
+</div>
+</div>   
+
+       <div class="row" id="booking-counts">
+
+       <div class="col-sm" id="t-booking">
+        <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Today</h5>
+        <h1>3</h1>
+       </div>
+
+       <div class="col-sm" id="lm-booking">
+
+       <h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
+        <h1>7</h1>
+
+       </div>
+
+       <div class="col-sm" id="y-booking">
+
+       <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Total</h5>
+        <h1>200</h1>
+
+       </div>
+
+
+           
+       </div>
+
+     
 
         </div>
-        <div class="col-sm">
-            <h2>Lahiru pramod de silva</h2>
+
+
+
+
+
+
+
+        <div class="col-sm pt-1" id="billing-data">
+        <h4><i class="fa fa-check-circle-o" aria-hidden="true"></i> Billing - Summary</h4>
+        <div class="row" id="booking-counts">
+
+<div class="col-sm" id="t-booking">
+ <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Today</h5>
+ <h1>3</h1>
+</div>
+
+<div class="col-sm" id="lm-booking">
+
+<h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
+ <h1>7</h1>
+
+</div>
+
+<div class="col-sm" id="y-booking">
+
+<h5><i class="fa fa-line-chart" aria-hidden="true"></i> Total</h5>
+ <h1>200</h1>
+
+</div>
+
+
+    
+</div>
         </div>
+
+        
 
 
 

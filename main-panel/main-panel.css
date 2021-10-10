@@ -114,6 +114,94 @@
   padding: 3px 25px;
 }
 
+#booking-data {
+  background: #61cdff;
+  padding-bottom: 10px;
+}
+
+#billing-data {
+  background: #fdc253;
+}
+
+#row3 {
+  grid-gap: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#blink {
+  -webkit-animation: blinker 1s linear infinite;
+          animation: blinker 1s linear infinite;
+  color: #50fc00;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#blink-table {
+  -webkit-animation: blinker 1s linear infinite;
+          animation: blinker 1s linear infinite;
+  color: #4685fa;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#booking-data-table {
+  border: none;
+  outline: none;
+  background: #000000;
+  color: white;
+}
+
+#data-table-row {
+  padding: 5px 5px;
+}
+
+#booking-counts {
+  grid-gap: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#t-booking {
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  padding-top: 2px;
+  border-radius: 10px;
+}
+
+#lm-booking {
+  border-style: solid;
+  border-color: #c93737;
+  color: #c93737;
+  text-align: center;
+  padding-top: 2px;
+  border-radius: 10px;
+}
+
+#y-booking {
+  border-style: solid;
+  border-color: #0d44fa;
+  color: #0d44fa;
+  text-align: center;
+  padding-top: 2px;
+  border-radius: 10px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
