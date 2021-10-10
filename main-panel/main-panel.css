@@ -166,6 +166,10 @@
   color: white;
 }
 
+#booking-table {
+  max-height: 8em;
+}
+
 #data-table-row {
   padding: 5px 5px;
 }
@@ -200,6 +204,46 @@
   text-align: center;
   padding-top: 2px;
   border-radius: 10px;
+}
+
+#prices-summary {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#price-board {
+  background: #9b9b9b;
+  color: white;
+}
+
+#price-board tr, th {
+  text-align: center;
+  -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+
+#price-board tr:hover {
+  background: #535151;
+  color: yellow;
+}
+
+#topic-table {
+  text-align: left;
+}
+
+#price-board tr, td {
+  border: none;
+  outline: none;
+}
+
+#calculator {
+  background: #a7e4e4;
+}
+
+#topic-generator {
+  background: black;
+  color: #ffffff;
+  border-radius: 25px;
 }
 
 @media screen and (max-height: 450px) {

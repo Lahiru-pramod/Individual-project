@@ -167,7 +167,12 @@
   outline: none;
   background: #000000;
   color: white;
+ 
 }
+#booking-table{
+  max-height: 8em;
+}
+
 #data-table-row{
   padding: 5px 5px;
 }
@@ -210,6 +215,52 @@
   border-radius: 10px;
 }
 
+// price table
+
+#prices-summary{
+
+  padding-left: 5px;
+  padding-right:5px ;
+
+}
+
+#price-board{
+
+  background: rgb(155, 155, 155);
+  color: white;
+}
+
+#price-board tr,th{
+
+  text-align: center;
+  transition: ease-in-out 0.2s;
+}
+#price-board tr:hover{
+
+  background: rgb(83, 81, 81);
+  color: yellow;
+}
+#topic-table{
+
+  text-align: left;
+}
+#price-board tr,td{
+
+  border: none;
+  outline: none;
+}
+
+// calculator...........
+
+#calculator{
+
+  background: #a7e4e4;
+}
+#topic-generator{
+  background: black;
+  color: #ffffff;
+  border-radius: 25px;
+}
 
 
 

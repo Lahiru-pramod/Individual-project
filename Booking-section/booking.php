@@ -38,12 +38,13 @@ if(isset($_POST['submit'])){
     $chicost = mysqli_real_escape_string($connection, $_POST['chicost']);
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
+    $time = date('Y-m-d') ;
 
 
     $query= "INSERT INTO booking (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Ontime";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$time}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);

@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+<?php require_once('../DBconnection/connection.php'); ?>
+<?php require_once('../DBconnection/functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,7 +175,7 @@
         </div>
         <div class="row" id="data-table-row">
 
-        <div class="table-responsive">
+        <div class="table-responsive" id="booking-table">
 
         <table class="table table-dark" id="booking-data-table">
   <thead>
@@ -201,6 +204,7 @@
             
       
     </tr>
+    
    
    
   </tbody>
@@ -277,6 +281,147 @@
 
         
 
+        </div>
+
+
+        <div class="row mt-1" id="prices-summary" >
+         <div class="col-sm-8">
+             <div class="table-responsive" id="price-table">
+             <table class="table" id="price-board">
+
+<tr >
+    <th colspan="4"><i class="fa fa-money" aria-hidden="true"></i> Latest Prices Board (normal/Packages)</th>
+
+</tr>
+<tr>
+    <th>Status</th>
+    <th>Adult(.rs)</th>
+    <th>Child(.rs)</th>
+    <th>Meal(.rs)</th>
+
+</tr>
+<tr>
+    <th  id="topic-table">Normal prices </th>
+    <?php
+          
+          $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+          $sql = "SELECT * FROM prices where id=1 order by ID desc";
+          $result = mysqli_query($connection , $sql);
+          while($row = mysqli_fetch_array($result)){
+
+   echo" <td>".$row['Adult']."</td>";
+   echo"<td >".$row['child']."</td>";
+    echo"<td>".$row['meal']."</td>";
+
+    
+  };
+  ?>
+</tr>
+<tr>
+    <th id="topic-table">10 members up package </th>
+    <?php
+          
+          $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+          $sql = "SELECT * FROM prices where id=2 order by ID desc";
+          $result = mysqli_query($connection , $sql);
+          while($row = mysqli_fetch_array($result)){
+
+   echo" <td>".$row['Adult']."</td>";
+   echo"<td>".$row['child']."</td>";
+    echo"<td>".$row['meal']."</td>";
+
+    
+  };
+  ?>
+</tr>
+<tr>
+    <th id="topic-table">20 members up package </th>
+    <?php
+          
+          $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+          $sql = "SELECT * FROM prices where id=3 order by ID desc";
+          $result = mysqli_query($connection , $sql);
+          while($row = mysqli_fetch_array($result)){
+
+   echo" <td>".$row['Adult']."</td>";
+   echo"<td>".$row['child']."</td>";
+    echo"<td>".$row['meal']."</td>";
+
+    
+  };
+  ?>
+</tr>
+<tr>
+    <th id="topic-table">30 members up package </th>
+    <?php
+          
+          $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+          $sql = "SELECT * FROM prices where id=4 order by ID desc";
+          $result = mysqli_query($connection , $sql);
+          while($row = mysqli_fetch_array($result)){
+
+   echo" <td>".$row['Adult']."</td>";
+   echo"<td>".$row['child']."</td>";
+    echo"<td>".$row['meal']."</td>";
+
+    
+  };
+  ?>
+</tr>
+
+
+
+</table>
+             </div>
+         </div>
+         <div class="col-sm-4" id="calculator">
+             <div class="row mt-1 text-center" id="topic-generator">
+                 <h5><i class="fa fa-calculator" aria-hidden="true"></i> Quick Cost Generator</h5>
+             </div>
+             <div class="row-mt-1">
+
+             <div class="table-responsive">
+                 <table class="table">
+
+                 <tr>
+                     <th>Total adult</th>
+                     <td>: <input type="number" name="" id=""></td>
+                 </tr>
+                 <tr>
+                     <th>Total child</th>
+                     <td>: <input type="number" name="" id=""></td>
+                 </tr>
+                 <tr>
+                     <th>Package</th>
+                     <td>: <select name="" id="">
+                         <option value="" selected hidden>select...</option>
+                         <option value="">Normal</option>
+                         <option value="">10 up package</option>
+                         <option value="">20 up package</option>
+                         <option value="">30 up package</option>
+                     </select></td>
+                 </tr>
+                 <tr>
+                 <th>Meals</th>
+                     <td>: <select name="" id="">
+                         <option value="" selected hidden>select...</option>
+                         <option value="">Yes</option>
+                         <option value="">No</option>
+                     </select></td>
+
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td> <button type="button" class="btn btn-success">Generate</button>
+                     <button type="button" class="btn btn-danger">Clear</button>
+                     </td>
+                 </tr>
+
+                 </table>
+             </div>
+
+             </div>
+         </div>
         </div>
 
 
