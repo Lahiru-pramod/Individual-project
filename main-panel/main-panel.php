@@ -248,7 +248,156 @@
 
        <h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
 
-       <h1>4</h1>
+       <?php
+
+       $today = date('m');
+       $year = date('Y');
+       $to=01;
+       $realtoday = sprintf("%02d", $today);
+
+       $specialyear=$year % 4;
+
+       if( $specialyear==0){
+
+        $today = date('m');
+        $year = date('Y');
+        $realtoday = sprintf("%02d", $today);
+        
+
+        switch($realtoday){
+
+            case 01:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 02:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-29";
+                break;
+            case 03:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 04:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 05:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 06:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 07:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 8):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+              
+            case sprintf("%02d", 9):
+                $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-30";
+                break;
+            case sprintf("%02d", 10):
+                 $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 11):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+                case sprintf("%02d", 12):
+               $firstdate = "$year-$realtoday-01";
+               $lastdate = "$year-$realtoday-31";
+               break;
+
+             default:
+              echo"some error has in date";
+              break;
+    
+           }
+
+       }
+       if( $specialyear>0){
+
+        $today = date('m');
+        $year = date('Y');
+        $realtoday = sprintf("%02d", $today);
+        
+
+        switch($realtoday){
+
+            case 01:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 02:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-28";
+                break;
+            case 03:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 04:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 05:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 06:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 07:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 8):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+              
+            case sprintf("%02d", 9):
+                $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-30";
+                break;
+            case sprintf("%02d", 10):
+                 $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 11):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+                case sprintf("%02d", 12):
+               $firstdate = "$year-$realtoday-01";
+               $lastdate = "$year-$realtoday-31";
+               break;
+
+             default:
+              echo"some error has in date";
+              break;
+    
+           }
+
+       }
+                
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM booking where Ontime BETWEEN '$firstdate' AND '$lastdate' ";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
       
 
        </div>
