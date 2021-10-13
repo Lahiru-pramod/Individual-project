@@ -20,7 +20,7 @@
         <div class="logo" id="logo"><i class="fas fa-anchor"></i></div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <table id="menu-table">
-       
+
             <tr id="menu-row" >
                 <td id="menu-col1">
 
@@ -32,7 +32,7 @@
                 <h3>  <a href="../Billing-section/billing.php"> Billing</a></h3>
 
                 </td>
-           
+
         </tr>
         <tr id="menu-row" >
                 <td id="menu-col1">
@@ -45,7 +45,7 @@
                 <h3>  <a href="#"> Employees</a></h3>
 
                 </td>
-           
+
         </tr>
         <tr id="menu-row" >
                 <td id="menu-col1">
@@ -58,12 +58,12 @@
                 <h3>  <a href="#"> Boat repaires</a></h3>
 
                 </td>
-           
+
         </tr>
         <tr id="menu-row" >
                 <td id="menu-col1">
 
-                <i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i> 
+                <i class="fa fa-file" aria-hidden="true" style="color: rgb(25, 192, 48);"></i>
 
                 </td>
                 <td id="menu-col2">
@@ -71,7 +71,7 @@
                 <h3>  <a href="#">Reports</a></h3>
 
                 </td>
-           
+
         </tr>
         <tr id="menu-row" >
                 <td id="menu-col1">
@@ -84,7 +84,7 @@
                 <h3>  <a href="../Booking-section/booking.php">Bookings</a></h3>
 
                 </td>
-           
+
         </tr>
         <tr id="menu-row" >
            <td id="menu-col1">
@@ -110,7 +110,7 @@
                 <h3>  <a href="#">Sign out</a></h3>
 
                 </td>
-           
+
         </tr>
         </table>
       </div>
@@ -120,7 +120,7 @@
             <div class="col-8" id="col1">
                 <h3><i class="fas fa-anchor"></i> Captain Cruise</h3>
             </div>
-            <div class="col" id="col2"> 
+            <div class="col" id="col2">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
         </div>
@@ -162,7 +162,7 @@
 
         </div>
 
-        </div> 
+        </div>
 
         <div class="row pt-2" id="row3">
 
@@ -193,51 +193,87 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>1234567v</td>
-      <td>Damith kumara</td>
-      <td>2021.08.01</td>
-      <td>8am-10am</td>
-      <td>0912476528</td>
-      <td><span id="blink-table"> Call..</span></td>
-            
-      
-    </tr>
-    
-   
-   
+  <?php
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM booking where booking_date='$today' order by bill_ID desc";
+                        $result = mysqli_query($connection , $sql);
+
+                        while($row = mysqli_fetch_array($result)){
+
+                        echo"<tr>";
+                        echo"<th scope='row'>".$row['bill_ID']."</th>";
+                        echo"<td>".$row['Orderer_ID']."</td>";
+                        echo"<td>".$row['Orderer_name']."</td>";
+                        echo"<td>".$row['Booking_date']."</td>";
+                        echo"<td>".$row['Booking_time']."</td>";
+                        echo"<td>".$row['Contact_no']."</td>";
+                        echo"<td><span id='blink-table'> Call..</span></td>";
+
+
+                        echo" </tr>";
+
+                    }
+                      
+
+                
+    ?>
+
+
+
   </tbody>
 </table>
 </div>
-</div>   
+</div>
 
        <div class="row" id="booking-counts">
 
        <div class="col-sm" id="t-booking">
         <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Today</h5>
-        <h1>3</h1>
+
+        <?php
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM booking where Ontime='$today'";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
        </div>
 
        <div class="col-sm" id="lm-booking">
 
        <h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
-        <h1>7</h1>
+
+       <h1>4</h1>
+      
 
        </div>
 
        <div class="col-sm" id="y-booking">
 
        <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Total</h5>
-        <h1>200</h1>
+       <?php
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM booking ";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
 
        </div>
 
 
-           
+
        </div>
 
-     
+
 
         </div>
 
@@ -253,7 +289,7 @@
 
 <div class="col-sm" id="t-booking">
  <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Today</h5>
- <h1>3</h1>
+  <h1>3</h1>
 </div>
 
 <div class="col-sm" id="lm-booking">
@@ -271,15 +307,15 @@
 </div>
 
 
-    
+
 </div>
         </div>
 
-        
 
 
 
-        
+
+
 
         </div>
 
@@ -303,7 +339,7 @@
 <tr>
     <th  id="topic-table">Normal prices </th>
     <?php
-          
+
           $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
           $sql = "SELECT * FROM prices where id=1 order by ID desc";
           $result = mysqli_query($connection , $sql);
@@ -313,14 +349,14 @@
    echo"<td >".$row['child']."</td>";
     echo"<td>".$row['meal']."</td>";
 
-    
+
   };
   ?>
 </tr>
 <tr>
     <th id="topic-table">10 members up package </th>
     <?php
-          
+
           $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
           $sql = "SELECT * FROM prices where id=2 order by ID desc";
           $result = mysqli_query($connection , $sql);
@@ -330,14 +366,14 @@
    echo"<td>".$row['child']."</td>";
     echo"<td>".$row['meal']."</td>";
 
-    
+
   };
   ?>
 </tr>
 <tr>
     <th id="topic-table">20 members up package </th>
     <?php
-          
+
           $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
           $sql = "SELECT * FROM prices where id=3 order by ID desc";
           $result = mysqli_query($connection , $sql);
@@ -347,14 +383,14 @@
    echo"<td>".$row['child']."</td>";
     echo"<td>".$row['meal']."</td>";
 
-    
+
   };
   ?>
 </tr>
 <tr>
     <th id="topic-table">30 members up package </th>
     <?php
-          
+
           $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
           $sql = "SELECT * FROM prices where id=4 order by ID desc";
           $result = mysqli_query($connection , $sql);
@@ -364,7 +400,7 @@
    echo"<td>".$row['child']."</td>";
     echo"<td>".$row['meal']."</td>";
 
-    
+
   };
   ?>
 </tr>
@@ -439,8 +475,8 @@
 
 
 
-    
+
     </div>
-      
+
 </body>
 </html>
