@@ -12,6 +12,7 @@
     <script src="https://use.fontawesome.com/7c77a89f23.js"></script>
     <script src="https://kit.fontawesome.com/b961a2b7a4.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./main-panel.js?v=<?php echo time(); ?>"></script>
     <title>Captain-cruise</title>
 </head>
@@ -438,27 +439,397 @@
 
 <div class="col-sm" id="t-booking">
  <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Today</h5>
-  <h1>3</h1>
+ <?php
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM bills where Ontime='$today'";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
+       </div>
+
+       <div class="col-sm" id="lm-booking">
+
+       <h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
+
+       <?php
+
+       $today = date('m');
+       $year = date('Y');
+       $to=01;
+       $realtoday = sprintf("%02d", $today);
+
+       $specialyear=$year % 4;
+
+       if( $specialyear==0){
+
+        $today = date('m');
+        $year = date('Y');
+        $realtoday = sprintf("%02d", $today);
+        
+
+        switch($realtoday){
+
+            case 01:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 02:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-29";
+                break;
+            case 03:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 04:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 05:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 06:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 07:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 8):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+              
+            case sprintf("%02d", 9):
+                $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-30";
+                break;
+            case sprintf("%02d", 10):
+                 $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 11):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+                case sprintf("%02d", 12):
+               $firstdate = "$year-$realtoday-01";
+               $lastdate = "$year-$realtoday-31";
+               break;
+
+             default:
+              echo"some error has in date";
+              break;
+    
+           }
+
+       }
+       if( $specialyear>0){
+
+        $today = date('m');
+        $year = date('Y');
+        $realtoday = sprintf("%02d", $today);
+        
+
+        switch($realtoday){
+
+            case 01:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 02:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-28";
+                break;
+            case 03:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 04:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 05:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case 06:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+            case 07:
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 8):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-31";
+                break;
+              
+            case sprintf("%02d", 9):
+                $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-30";
+                break;
+            case sprintf("%02d", 10):
+                 $firstdate = "$year-$realtoday-01";
+                 $lastdate = "$year-$realtoday-31";
+                break;
+            case sprintf("%02d", 11):
+                $firstdate = "$year-$realtoday-01";
+                $lastdate = "$year-$realtoday-30";
+                break;
+                case sprintf("%02d", 12):
+               $firstdate = "$year-$realtoday-01";
+               $lastdate = "$year-$realtoday-31";
+               break;
+
+             default:
+              echo"some error has in date";
+              break;
+    
+           }
+
+       }
+                
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM bills where Ontime BETWEEN '$firstdate' AND '$lastdate' ";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
+      
+
+       </div>
+
+       <div class="col-sm" id="y-booking">
+
+       <h5><i class="fa fa-line-chart" aria-hidden="true"></i> Total</h5>
+       <?php
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM bills ";
+                        $result = mysqli_query($connection , $sql);
+                        $rowcount=mysqli_num_rows($result);
+                              echo"<h1>$rowcount</h1>";
+                      
+                        ?>
+
+       </div>
+
+       <!-- Value of today bills and monthly -->
+
+
+       <div class="row mt-1">
+           <div class="table-responsive">
+               <table class="table" id="value-table">
+
+               <tr>
+                   <th><i class="fa fa-area-chart" aria-hidden="true"></i></th>
+                   <th>Value of Today bills :</th>
+                   <?php
+
+                 $Total = 0;
+                 $today=date('Y-m-d');
+
+                        $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                        $sql = "SELECT * FROM bills where Ontime='$today' ";
+                        $result = mysqli_query($connection , $sql);
+                        while($row = mysqli_fetch_array($result)){
+
+                         $value = $row['Total_cost'];
+                         $Total = $Total + $value;
+
+                        };
+
+                   echo"<th>$Total.00</th>";
+
+                   ?>
+
+               </tr>
+               <tr>
+                   <th><i class="fa fa-area-chart" aria-hidden="true"></i></th>
+                   <th>Value of this month bills :</th>
+                   <?php
+
+$today = date('m');
+$year = date('Y');
+$to=01;
+$realtoday = sprintf("%02d", $today);
+
+$specialyear=$year % 4;
+
+if( $specialyear==0){
+
+ $today = date('m');
+ $year = date('Y');
+ $realtoday = sprintf("%02d", $today);
+ 
+
+ switch($realtoday){
+
+     case 01:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 02:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-29";
+         break;
+     case 03:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 04:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+     case 05:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 06:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+     case 07:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case sprintf("%02d", 8):
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+       
+     case sprintf("%02d", 9):
+         $firstdate = "$year-$realtoday-01";
+          $lastdate = "$year-$realtoday-30";
+         break;
+     case sprintf("%02d", 10):
+          $firstdate = "$year-$realtoday-01";
+          $lastdate = "$year-$realtoday-31";
+         break;
+     case sprintf("%02d", 11):
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+         case sprintf("%02d", 12):
+        $firstdate = "$year-$realtoday-01";
+        $lastdate = "$year-$realtoday-31";
+        break;
+
+      default:
+       echo"some error has in date";
+       break;
+
+    }
+
+}
+if( $specialyear>0){
+
+ $today = date('m');
+ $year = date('Y');
+ $realtoday = sprintf("%02d", $today);
+ 
+
+ switch($realtoday){
+
+     case 01:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 02:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-28";
+         break;
+     case 03:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 04:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+     case 05:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case 06:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+     case 07:
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+     case sprintf("%02d", 8):
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-31";
+         break;
+       
+     case sprintf("%02d", 9):
+         $firstdate = "$year-$realtoday-01";
+          $lastdate = "$year-$realtoday-30";
+         break;
+     case sprintf("%02d", 10):
+          $firstdate = "$year-$realtoday-01";
+          $lastdate = "$year-$realtoday-31";
+         break;
+     case sprintf("%02d", 11):
+         $firstdate = "$year-$realtoday-01";
+         $lastdate = "$year-$realtoday-30";
+         break;
+         case sprintf("%02d", 12):
+        $firstdate = "$year-$realtoday-01";
+        $lastdate = "$year-$realtoday-31";
+        break;
+
+      default:
+       echo"some error has in date";
+       break;
+
+    }
+
+}
+         $Total=0;
+
+                 $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                 $sql = "SELECT * FROM bills where Ontime BETWEEN '$firstdate' AND '$lastdate' ";
+                 $result = mysqli_query($connection , $sql);
+                 while($row = mysqli_fetch_array($result)){
+
+                    $value = $row['Total_cost'];
+                    $Total = $Total + $value;
+
+                   };
+
+              echo"<th>$Total.00</th>";
+
+                   ?>
+               </tr>
+
+
+               
+
+               </table>
+           </div>
+       </div>
 </div>
 
-<div class="col-sm" id="lm-booking">
-
-<h5><i class="fa fa-line-chart" aria-hidden="true"></i> This Month</h5>
- <h1>7</h1>
-
-</div>
-
-<div class="col-sm" id="y-booking">
-
-<h5><i class="fa fa-line-chart" aria-hidden="true"></i> Total</h5>
- <h1>200</h1>
-
-</div>
-
 
 
 </div>
+
         </div>
+
 
 
 
@@ -566,43 +937,45 @@
              <div class="row-mt-1">
 
              <div class="table-responsive">
+                 <form>
                  <table class="table">
 
                  <tr>
                      <th>Total adult</th>
-                     <td>: <input type="number" name="" id=""></td>
+                     <td>: <input type="number" name="" id="adult"  required max="100" min="1" ></td>
                  </tr>
                  <tr>
                      <th>Total child</th>
-                     <td>: <input type="number" name="" id=""></td>
+                     <td>: <input type="number" name="" id="child" required max="100" min="0"></td>
                  </tr>
                  <tr>
                      <th>Package</th>
-                     <td>: <select name="" id="">
-                         <option value="" selected hidden>select...</option>
-                         <option value="">Normal</option>
-                         <option value="">10 up package</option>
-                         <option value="">20 up package</option>
-                         <option value="">30 up package</option>
-                     </select></td>
+                     <td>:<select id="package" name="package" >
+                            <option value="normal">Normal Prices</option>
+                            <option value="10up">10 up Package</option>
+                            <option value="20up">20 up Package</option>
+                            <option value="30up">30 up Package</option>
+
+                            </select></td>
                  </tr>
                  <tr>
                  <th>Meals</th>
-                     <td>: <select name="" id="">
-                         <option value="" selected hidden>select...</option>
-                         <option value="">Yes</option>
-                         <option value="">No</option>
-                     </select></td>
+                     <td>: <select id="meal" name="meal" >
+                            <option value="notvalue" selected>Choose...</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                            </select></td>
 
                  </tr>
                  <tr>
                      <td></td>
-                     <td> <button type="button" class="btn btn-success">Generate</button>
-                     <button type="button" class="btn btn-danger">Clear</button>
+                     <td> <button type="button" class="btn btn-success" popup-open="popup-1" href="javascript:void(0)" onclick="JavaScript:genarate()">Generate</button>
+                     <button type="reset" class="btn btn-danger">Clear</button>
                      </td>
                  </tr>
 
                  </table>
+                 </form>
              </div>
 
              </div>
@@ -614,6 +987,37 @@
 
 
 
+        <!-- popup window open -->
+
+        <div class="popup" popup-name="popup-1">
+            <div class="popup-content">
+        <div class="table-responsive">
+            <table class="table" id="form-table">
+
+            <tr id="count">
+                    <td  id="ad"></td>
+                    <td><input type="text" name="adcost" id="ad-cost"  ></td>
+                </tr>
+                <tr  id="count">
+                    <td id="chi-pass-co"></td>
+                    <td><input type="text" name="chicost" id="chi-cost"  ></td>
+                </tr>
+                <tr id="count">
+                    <td id="pass-meal-co"><p id="pass-meal-co"></p></td>
+                    <td><input type="text" name="mealcost" id="meal-cost"  ></td>
+                </tr>
+                <tr id="count">
+                    <td id="tot-pass-cost"></td>
+                    <td><input type="text" name="totalcost" id="total-cost" ></td>
+                </tr>
+
+            </table>
+        </div>
+        <a class="close-button" popup-close="popup-1" href="javascript:void(0)">x</a>
+            </div>
+        </div>  
+
+        <!-- Close -->
 
 
 

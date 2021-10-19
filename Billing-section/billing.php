@@ -38,11 +38,12 @@ if(isset($_POST['submit'])){
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
     $guide = mysqli_real_escape_string($connection, $_POST['guide']);
+    $today = date('Y-m-d');
 
     $query= "INSERT INTO bills (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide,Ontime";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}','{$today}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);
@@ -343,6 +344,8 @@ if(isset($_POST['submit'])){
 
          <form action="billing.php" method="POST" enctype="multipart/form-data" id="form-menu">
 
+         <div class="table-responsive">
+
                 <table class="table" id="form-table">
 
                 <tr>
@@ -499,6 +502,7 @@ if(isset($_POST['submit'])){
     
 
                 </table>
+         </div>
 
         </form>
 
