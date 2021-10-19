@@ -1007,8 +1007,8 @@ if( $specialyear>0){
                     <td><input type="text" name="mealcost" id="meal-cost"  ></td>
                 </tr>
                 <tr id="count">
-                    <td id="tot-pass-cost"></td>
-                    <td><input type="text" name="totalcost" id="total-cost" ></td>
+                    <td id="tot-pass-cost"  style="color: red;"></td>
+                    <td><input type="text" name="totalcost" id="total-cost" style="color: red;" ></td>
                 </tr>
 
             </table>

@@ -1,6 +1,7 @@
 #header {
-  background-color: #2ca52c;
+  background-color: black;
   border-radius: 20px;
+  color: white;
 }
 
 #print-box-row {
@@ -15,8 +16,16 @@
   background-color: white;
   width: 700px;
   padding: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.8) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.8) 0px 3px 6px;
+}
+
+#print-box2 {
+  background-color: white;
+  width: 700px;
+  padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.8) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.8) 0px 3px 6px;
 }
 
 #info-table, tr, td {
@@ -26,5 +35,14 @@
 
 #topic {
   width: 140px;
+}
+
+#printbtn {
+  width: 100px;
+}
+
+#cancelbtn {
+  width: 100px;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=Bill-section.css.map */
