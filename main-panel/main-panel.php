@@ -43,7 +43,7 @@
                 </td>
                 <td id="menu-col2">
 
-                <h3>  <a href="#"> Employees</a></h3>
+                <h3>  <a href="../Employee/employee.php"> Employees</a></h3>
 
                 </td>
 
