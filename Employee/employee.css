@@ -17,4 +17,49 @@
 #createbtn {
   width: 100px;
 }
+
+.popup {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #a3a3a3;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.popup-content {
+  width: 90%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px;
+  margin-top: 75px;
+  -webkit-box-shadow: 0px 2px 6px black;
+          box-shadow: 0px 2px 6px black;
+  border-radius: 3px;
+  background: white;
+  position: relative;
+  overflow-x: scroll;
+  max-height: 700px;
+}
+
+/* Popup close button */
+.close-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+  .popup-content {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=employee.css.map */

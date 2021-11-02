@@ -36,11 +36,9 @@
                 <div class="col mt-2 text-center" id="create-profile">
                     <h5><i class="fa fa-user" aria-hidden="true"></i></h5>
                     <h4>Create a new employee profile</h4>
-                    <input type="button" class="btn btn-success" id="createbtn" value="Create">
+                    <input type="button" class="btn btn-success" popup-open="popup-1" href="javascript:void(0)" id="createbtn" value="Create">
                 </div>
             </div>
-
-              
 
            
 
@@ -60,13 +58,156 @@
 
 
 
+ <!-- popup window open -->
 
+ <div class="popup" popup-name="popup-1">
+    <div class="popup-content">
+        <div class="table-responsive">
+            
+            <table class="table">
+            <form action="./employee.php" method="POST" >
+                <tr>
+                    <th colspan="3" style="color: blue; font:20px;"><i class="fa fa-user" aria-hidden="true"></i> Create new employee profile</th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>:</th>
+                    <td><input type="text" name="name" id="" required></td>
+                </tr>
+                <tr>
+                    <th>NIC</th>
+                    <th>:</th>
+                    <td><input type="text" name="nic" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <th>:</th>
+                    <td><input type="number" name="age" id="" required> Years Old.</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <th>:</th>
+                    <td>
+                        <input type="radio" name="gender" value="male" class="containerRadio" required> Male
+                        <input type="radio" name="gender" value="female" class="containerRadio" required> Female
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <th>:</th>
+                    <td><input type="textarea" name="address" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Contact</th>
+                    <th>:</th>
+                    <td><input type="textarea" name="contact" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Employee's Image</th>
+                    <th>:</th>
+                    <td> <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" required></td>
+                </tr>
+
+                <tr>
+                    <th colspan="3" style="color:red;">- Job Details -</th>
+                </tr>
+
+                <tr>
+                    <th>Applied Position</th>
+                    <th>:</th>
+                    <td>
+                        <select required>
+                            <option value="" disabled selected hidden>select..</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Officer">Officer</option>
+                            <option value="Guide">Guide</option>
+                            <option value="Boat Rider">Boat Rider</option>
+                            <option value="Servent">Servent</option>
+                            <option value="Mechanic">Mechanic</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Position Describe</th>
+                    <th>:</th>
+                    <td><input type="text" name="describe" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Qualifications</th>
+                    <th>:</th>
+                    <td>  <textarea name="Qualifications" required placeholder="Employee Qualifications type here.." class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <th>Job Location</th>
+                    <th>:</th>
+                    <td><input type="text" name="Job-location" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Qua: Certificates</th>
+                    <th>:</th>
+                    <td><input type="checkbox" class="check-certificate" name="Qua-certificate" value="OK" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Medical Certificate</th>
+                    <th>:</th>
+                    <td><input type="checkbox" class="check-certificate" name="Medi-certificate" value="OK" id="" required></td>
+                </tr>
+                <tr>
+                    <th>Character Certificate</th>
+                    <th>:</th>
+                    <td><input type="checkbox" class="check-certificate" name="Char-certificate" value="OK" id="" required></td>
+                </tr>
+                
+                <tr>
+                    <th colspan="3" style="color:red;">- Employee Bank Details -</th>
+                </tr>
+
+                <tr>
+                    <th>Bank account number</th>
+                    <th>:</th>
+                    <td><input type="text" name="account" id=""></td>
+                </tr>
+                <tr>
+                    <th>Bank account number - Re</th>
+                    <th>:</th>
+                    <td><input type="text" name="account" id="" placeholder="Re-enter"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <input type="submit" id="submit" class="btn btn-success" value="Create">
+                        <input type="reset" class="btn btn-danger" value="Reset" id="clear" >
+                
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+                </form>
+            </table>
+
+        </div>
+          <a class="close-button" popup-close="popup-1" href="javascript:void(0)"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+    </div>
+ </div>  
+
+        <!-- code close -->
 
 
 
     </div> 
      <!-- container fluid close tag -->
  
+
+
     
 </body>
 </html>
