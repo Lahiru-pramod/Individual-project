@@ -1,3 +1,82 @@
+<?php session_start(); ?>
+<?php require_once('../DBconnection/connection.php'); ?>
+<?php require_once('../DBconnection/functions.php'); ?>
+<?php
+
+if(isset($_POST['submit'])){
+
+    
+    $name = mysqli_real_escape_string($connection, $_POST['name']);
+    $EmNIC = mysqli_real_escape_string($connection, $_POST['nic']);
+    $BOD = mysqli_real_escape_string($connection, $_POST['bod']);
+    $gender = mysqli_real_escape_string($connection, $_POST['gender']);
+    $address = mysqli_real_escape_string($connection, $_POST['address']);
+    $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+    $image = mysqli_real_escape_string($connection, $_FILES['image']['name']);
+    $position = mysqli_real_escape_string($connection, $_POST['position']);
+    $pdescribe = mysqli_real_escape_string($connection, $_POST['describe']);
+    $Qualifications = mysqli_real_escape_string($connection, $_POST['Qualifications']);
+    $Joblocation = mysqli_real_escape_string($connection, $_POST['Job-location']);
+    $ce1 = mysqli_real_escape_string($connection, $_POST['Qua-certificate']);
+    $ce2 = mysqli_real_escape_string($connection, $_POST['Medi-certificate']);
+    $ce3 = mysqli_real_escape_string($connection, $_POST['Char-certificate']);
+    $Bank = mysqli_real_escape_string($connection, $_POST['account']);
+    $today = date('Y-m-d');
+
+    $query= "INSERT INTO employee (";
+    $query .= " EmNIC , Name, Position, JobDate, Address, Contact, Birthdate, Picture, Gender, PositionDescribe, Qualifications, JobLocation, Quace , Medice , Charce, Bankaccount";
+    $query .= ") VALUES (";
+    $query .= "'{$EmNIC}','{$name}','{$position}','{$today}','{$address}','{$contact}','{$bod}','{$image}','{$gender}','{$pdescribe}','{$Qualifications}','{$Joblocation}','{$ce1}','{$ce2}','{$ce3}','{$Bank}'";
+    $query .= ")";
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+// if successful
+
+function function_alert($message) {
+ 
+    echo "<script>alert('$message');</script>";
+}
+
+function_alert("Successfull");
+  
+    header("location:employee.php");
+
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+       header("location:employee.php");
+
+
+    }
+
+
+}
+
+
+
+//image upload part
+if(isset($_POST['submit'])){
+
+    //button clicked
+    $file_name = $_FILES['image']['name'];
+    $file_type = $_FILES['image']['type'];
+    $file_size = $_FILES['image']['size'];
+    $temp_name = $_FILES['image']['tmp_name'];
+    
+    $upload_to = 'profilepic/';
+    move_uploaded_file($temp_name, $upload_to . $file_name);
+    }
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +89,7 @@
     <script src="https://kit.fontawesome.com/b961a2b7a4.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./employee.js?v=<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="../common-code/navbar.css?v=<?php echo time(); ?>">
     <script src="../common-code/common.js?v=<?php echo time(); ?>"></script>
@@ -62,17 +142,16 @@
 
  <div class="popup" popup-name="popup-1">
     <div class="popup-content">
-        <div class="table-responsive">
-            
+        <div class="table-responsive"> 
             <table class="table">
-            <form action="./employee.php" method="POST" >
+            <form action="employee.php" id="regform" method="POST" enctype="multipart/form-data" >
                 <tr>
                     <th colspan="3" style="color: blue; font:20px;"><i class="fa fa-user" aria-hidden="true"></i> Create new employee profile</th>
                 </tr>
                 <tr>
                     <th>Name</th>
                     <th>:</th>
-                    <td><input type="text" name="name" id="" required></td>
+                    <td><input type="text" name="name" id="name" required ></td>
                 </tr>
                 <tr>
                     <th>NIC</th>
@@ -80,9 +159,9 @@
                     <td><input type="text" name="nic" id="" required></td>
                 </tr>
                 <tr>
-                    <th>Age</th>
+                    <th>Birth date</th>
                     <th>:</th>
-                    <td><input type="number" name="age" id="" required> Years Old.</td>
+                    <td><input type="date" name="bod" id="birth" required></td>
                 </tr>
                 <tr>
                     <th>Gender</th>
@@ -116,7 +195,7 @@
                     <th>Applied Position</th>
                     <th>:</th>
                     <td>
-                        <select required>
+                        <select required name="position">
                             <option value="" disabled selected hidden>select..</option>
                             <option value="Manager">Manager</option>
                             <option value="Officer">Officer</option>
@@ -166,19 +245,20 @@
                 <tr>
                     <th>Bank account number</th>
                     <th>:</th>
-                    <td><input type="text" name="account" id=""></td>
+                    <td><input type="text" name="account" id="account-number" onkeyup="check()"></td>
                 </tr>
                 <tr>
                     <th>Bank account number - Re</th>
                     <th>:</th>
-                    <td><input type="text" name="account" id="" placeholder="Re-enter"></td>
+                    <td><input type="text" name="account" onkeyup="check()" id="account-number-confirm" placeholder="Re-enter"> <span id="message"></span></td> 
+        
                 </tr>
 
                 <tr>
                     <td></td>
                     <td colspan="2">
-                        <input type="submit" id="submit" class="btn btn-success" value="Create">
-                        <input type="reset" class="btn btn-danger" value="Reset" id="clear" >
+                        <input type="submit" name="submit" id="submit" class="btn btn-success" value="Create">
+                        <input type="reset" class="btn btn-danger" value="Reset" id="clear" > 
                 
                     </td>
                 </tr>
