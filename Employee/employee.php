@@ -105,20 +105,57 @@ if(isset($_POST['submit'])){
 
                <div class="row">
 
-                    <h3><i class="fa fa-users" aria-hidden="true"></i> Employee Management</h3>
+                    <h3><i class="fa fa-users" aria-hidden="true"></i> Employee Management  <input type="button" title="For Create a new Employee profile click me." class="btn btn-success" popup-open="popup-1" href="javascript:void(0)" id="createbtn" value="Create new a Employee profile"></h3>
 
                </div>
     
             </div>
-
-            <div class="row" id="row4">
-
-                <div class="col mt-2 text-center" id="create-profile">
-                    <h5><i class="fa fa-user" aria-hidden="true"></i></h5>
-                    <h4>Create a new employee profile</h4>
-                    <input type="button" class="btn btn-success" popup-open="popup-1" href="javascript:void(0)" id="createbtn" value="Create">
-                </div>
+            <div class="row mt-3" id="row4">
+                  <div class="form-group has-search">
+                      <input type="text" onkeyup="search()" id="searchbox" class="form-control" placeholder="Search Profile by NIC">
+                 </div>
             </div>
+
+            <div class="row mt-3" id="row5">
+                <div class="table-responsive">
+                    <table class="table table-dark text-center" id="Employee-details">
+                        <thead>
+                            <tr>
+                                <th>Em.no</th>
+                                <th>Name</th>
+                                <th>NIC</th>
+                                <th>Position</th>
+                                <th>Contact</th>
+                                <th>Profile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Lahiru Pramod</td>
+                                <td>199802310093</td>
+                                <td>Officer</td>
+                                <td>0711438249</td>
+                                <td><h3><a href=""><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Lahiru Pramod</td>
+                                <td>199802310093</td>
+                                <td>Officer</td>
+                                <td>0711438249</td>
+                                <td><h3><a href=""><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+            </div>
+
+
+
+           
 
            
 
@@ -257,7 +294,7 @@ if(isset($_POST['submit'])){
                 <tr>
                     <td></td>
                     <td colspan="2">
-                        <input type="submit" name="submit" id="submit" class="btn btn-success" value="Create">
+                        <input type="submit" onclick="return confirm('Do you want to create a new profile with this details?')"  name="submit" id="submit" class="btn btn-success" value="Create">
                         <input type="reset" class="btn btn-danger" value="Reset" id="clear" > 
                 
                     </td>
