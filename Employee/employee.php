@@ -136,7 +136,7 @@ if(isset($_POST['submit'])){
                                 <td>199802310093</td>
                                 <td>Officer</td>
                                 <td>0711438249</td>
-                                <td><h3><a href=""><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
+                                <td><h3><a href="./Profile/profile.php"><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
                             </tr>
                             <tr>
                                 <td>1</td>
