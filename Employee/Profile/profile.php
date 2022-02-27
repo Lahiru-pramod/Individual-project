@@ -17,66 +17,82 @@
 <body>
 
 <div class="container">
-    <div class="row mt-3" id="profile-data-row">
-        <div class="col-4" id="profile-picture">
-            <img src="../profilepic/210-2104368_angry-person-png-pic-angry-man-cartoon-png.png" class="img-thumbnail" alt="" id="profilepic">
-        </div>
-        <div class="col-8">
-            <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th>Employee ID</th>
-                        <th>:</th>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>:</th>
-                        <td>Lahiru Pramod De Silva</td>
-                    </tr>
-                    <tr>
-                        <th>NIC Number</th>
-                        <th>:</th>
-                        <td>199802310093</td>
-                    </tr>
-                    <tr>
-                        <th>Position</th>
-                        <th>:</th>
-                        <td>Guide</td>
-                    </tr>
-                    <tr>
-                        <th>Entry Date</th>
-                        <th>:</th>
-                        <td>2021.11.10</td>
-                    </tr>
-                    <tr>
-                        <th>Address</th>
-                        <th>:</th>
-                        <td>27-D, Pathegama , Balapitiya</td>
-                    </tr>
-                    <tr>
-                        <th>Contact</th>
-                        <th>:</th>
-                        <td>07731343473</td>
-                    </tr>
-                    <tr>
-                        <th>Bank account number</th>
-                        <th>:</th>
-                        <td>784930593049</td>
-                    </tr>
-                   
-                    
-                    
 
-                </table>
+<div class="row mt-2" id="row-1">
 
+<h3><Label>Employee Details</Label></h3>
 
-            </div>
-        </div>
+</div>
 
+   <?php
 
-    </div>
+$connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+$id = $_GET['id'];
+$sql = "SELECT * FROM employee where ID ='$id' ";
+$result = mysqli_query($connection , $sql);
+while($row = mysqli_fetch_array($result)){
 
+echo "<div class=\"row mt-3\" id=\"profile-data-row\">";
+echo "<div class=\"col-4\" id=\"profile-picture\">";
+echo "<img src=\"../profilepic/$row[Picture]\" class=\"img-thumbnail\" alt=\"\" id=\"profilepic\">";
+echo "</div>";
+echo "<div class=\"col-8\">";
+echo "<div class=\"table-responsive\">";
+echo "<table class=\"table\">";
+echo "<tr>";
+echo "<th>Employee ID</th>";
+echo "<th>:</th>";
+echo "<td>".$row['ID']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Full Name</th>";
+echo "<th>:</th>";
+echo "<td>".$row['Name']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>NIC Number</th>";
+echo "<th>:</th>";
+echo "<td>".$row['EmNIC']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Position</th>";
+echo "<th>:</th>";
+echo "<td>".$row['Position']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Entry Date</th>";
+echo "<th>:</th>";
+echo "<td>".$row['JobDate']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Address</th>";
+echo "<th>:</th>";
+echo "<td>".$row['Address']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Contact</th>";
+echo "<th>:</th>";
+echo "<td>".$row['Contact']."</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Bank account number</th>";
+echo "<th>:</th>";
+echo "<td>".$row['Bankaccount']."</td>";
+echo "</tr>";
+echo "";
+echo "";
+echo "";
+echo "";
+echo "</table>";
+echo "";
+echo "";
+echo "</div>";
+echo "</div>";
+echo "";
+echo "";
+echo "</div>";
+}
+?>
 
 
 </div>

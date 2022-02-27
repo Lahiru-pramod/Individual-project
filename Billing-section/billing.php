@@ -38,12 +38,14 @@ if(isset($_POST['submit'])){
     $mealcost = mysqli_real_escape_string($connection, $_POST['mealcost']);
     $totalcost = mysqli_real_escape_string($connection, $_POST['totalcost']);
     $guide = mysqli_real_escape_string($connection, $_POST['guide']);
+    $rider = mysqli_real_escape_string($connection, $_POST['boatrider']);
+
     $today = date('Y-m-d');
 
     $query= "INSERT INTO bills (";
-    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide,Ontime";
+    $query .= "Orderer_name , Orderer_ID , Booking_date, Booking_time , Adult, Child, package, Location, Address, Contact_no, Email, Meals, Adult_cost, Child_cost,Meal_cost , Total_cost, Guide,Rider,Ontime";
     $query .= ") VALUES (";
-    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}','{$today}'";
+    $query .= "'{$orderer}','{$ordID}','{$bookdate}','{$booking}','{$adult}','{$child}','{$package}','{$location}','{$Address}','{$contact}','{$email}','{$meal}','{$adcost}','{$chicost}','{$mealcost}','{$totalcost}','{$guide}','{$rider}','{$today}'";
     $query .= ")";
 
     $result = mysqli_query($connection, $query);
@@ -464,7 +466,7 @@ if(isset($_POST['submit'])){
                 </tr>
                 <tr>
                     <td>
-                        <p> Safari Guide's Name :</p>
+                        <p> Safari Guide :</p>
                         <p><select id="guide" name="guide" >
                             <option hidden>Choose...</option>
 
@@ -473,6 +475,26 @@ if(isset($_POST['submit'])){
                 
                 $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
                 $sql = "SELECT * FROM employee where Position='Guide' ";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+                    $emvalue = $row['Name'];
+
+                           echo "<option value='$emvalue' >".$row['Name']."</option>";
+                }
+                ?>
+
+                            </select></p>
+                    </td>
+                    <td>
+                        <p> Boat Rider :</p>
+                        <p><select id="guide" name="boatrider" >
+                            <option hidden>Choose...</option>
+
+
+                            <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM employee where Position='Boat Rider' ";
                 $result = mysqli_query($connection , $sql);
                 while($row = mysqli_fetch_array($result)){
                     $emvalue = $row['Name'];

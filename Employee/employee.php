@@ -130,22 +130,22 @@ if(isset($_POST['submit'])){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Lahiru Pramod</td>
-                                <td>199802310093</td>
-                                <td>Officer</td>
-                                <td>0711438249</td>
-                                <td><h3><a href="./Profile/profile.php"><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lahiru Pramod</td>
-                                <td>199802310093</td>
-                                <td>Officer</td>
-                                <td>0711438249</td>
-                                <td><h3><a href=""><i class="fa fa-user" aria-hidden="true" title="Watch Profile"></i></a></h3></td>
-                            </tr>
+                            <?php
+
+                              $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                              $sql = "SELECT * FROM employee ";
+                              $result = mysqli_query($connection , $sql);
+                              while($row = mysqli_fetch_array($result)){
+                            echo "<tr>";
+                            echo "<td>".$row['ID']."</td>";
+                            echo "<td>".$row['Name']."</td>";
+                            echo "<td>".$row['EmNIC']."</td>";
+                            echo "<td>".$row['Position']."</td>";
+                            echo "<td>".$row['Contact']."</td>";
+                            echo "<td><h3><a href=\"./Profile/profile.php?id=".$row['ID']."\"><i class=\"fa fa-user\" aria-hidden=\"true\" title=\"Watch Profile\"></i></a></h3></td>";
+                            echo "</tr>";
+                              }
+                           ?>
                         </tbody>
                         
                     </table>
