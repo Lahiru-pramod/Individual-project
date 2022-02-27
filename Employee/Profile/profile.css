@@ -19,4 +19,10 @@
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
+
+#tour-details-topic {
+  background-color: cadetblue;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=profile.css.map */

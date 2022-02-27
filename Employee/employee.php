@@ -142,7 +142,7 @@ if(isset($_POST['submit'])){
                             echo "<td>".$row['EmNIC']."</td>";
                             echo "<td>".$row['Position']."</td>";
                             echo "<td>".$row['Contact']."</td>";
-                            echo "<td><h3><a href=\"./Profile/profile.php?id=".$row['ID']."\"><i class=\"fa fa-user\" aria-hidden=\"true\" title=\"Watch Profile\"></i></a></h3></td>";
+                            echo "<td><h3><a href=\"./Profile/profile.php?id=".$row['ID']."&Name=".$row['Name']."\"><i class=\"fa fa-user\" aria-hidden=\"true\" title=\"Watch Profile\"></i></a></h3></td>";
                             echo "</tr>";
                               }
                            ?>

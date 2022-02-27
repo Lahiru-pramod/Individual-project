@@ -94,8 +94,66 @@ echo "</div>";
 }
 ?>
 
+        <div class="row mt-3" id="tour-details-pane">
+
+           <div class="row" id="tour-details-topic">
+
+                <h4 id="tourdetailsmonthname"></h4>
+
+
+           </div>
+
+           <div class="row" id="tour-details-table">
+              <table class="table">
+                  <tr>
+                      <th>Bill no</th>
+                      <th>Date</th>
+                      <th>Bill value</th>
+                      <th>time</th>
+                  </tr>
+
+                  <?php
+
+                    $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                    $name = $_GET['Name'];
+                    $first_day = date('Y-m-01');  
+                    $last_day = date('Y-m-t');
+                    $sql = "SELECT * FROM bills where (Booking_date between '$first_day' and '$last_day') And (Guide ='$name' OR Rider = '$name')  ";
+                    $result = mysqli_query($connection , $sql);
+                    while($row = mysqli_fetch_array($result)){
+
+                    echo "<tr>";
+                    echo "<td>".$row['bill_ID']."</td>";
+                    echo "<td>".$row['Booking_date']."</td>";
+                    echo "<td>".$row['Total_cost']."</td>";
+                    echo "<td>".$row['Booking_time']."</td>";
+                    echo "";
+                    echo "</tr>";
+                    }
+                  ?>
+              </table>
+
+            
+
+           </div>
+
+        </div>
+
+
+
 
 </div>
     
 </body>
+
+<script>
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+const d = new Date();
+var text = "Tour Details : " + monthNames[d.getMonth()];
+
+    document.getElementById("tourdetailsmonthname").innerHTML=text;
+</script>
 </html>
