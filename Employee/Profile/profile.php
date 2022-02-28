@@ -38,7 +38,7 @@ echo "<img src=\"../profilepic/$row[Picture]\" class=\"img-thumbnail\" alt=\"\" 
 echo "</div>";
 echo "<div class=\"col-8\">";
 echo "<div class=\"table-responsive\">";
-echo "<table class=\"table\">";
+echo "<table  id='tabledetails' class=\"table\">";
 echo "<tr>";
 echo "<th>Employee ID</th>";
 echo "<th>:</th>";
@@ -57,7 +57,7 @@ echo "</tr>";
 echo "<tr>";
 echo "<th>Position</th>";
 echo "<th>:</th>";
-echo "<td>".$row['Position']."</td>";
+echo "<td id='emposition'>".$row['Position']."</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<th>Entry Date</th>";
@@ -94,6 +94,76 @@ echo "</div>";
 }
 ?>
 
+<!-- total payment show start -->
+
+<div class="row mt-2">
+
+<div class="row" id="tour-details-topic">
+
+    <h4 id="tourpayment"></h4>
+
+</div>
+
+<div class="row">
+  <table class="table" id="pre-table">
+      <tr>
+          <th>position</th>
+          <th>payment calculate precentage (%)</th>
+      </tr>
+      <tr>
+          <td>Guide</td>
+          <?php
+
+$connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+$sql = "SELECT * FROM paymentpre where preID=1";
+$result = mysqli_query($connection , $sql);
+while($row = mysqli_fetch_array($result)){
+
+          echo"<td>".$row['presentage']."</td>";
+
+}
+        ?>
+      </tr>
+      <tr>
+          <td>BoatRider</td>
+          <?php
+
+$connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+$sql = "SELECT * FROM paymentpre where preID=2";
+$result = mysqli_query($connection , $sql);
+while($row = mysqli_fetch_array($result)){
+
+          echo"<td>".$row['presentage']."</td>";
+
+}
+        ?>
+          
+      </tr>
+  </table>
+</div>
+
+<div class="row">
+  <table class="table" id="totalpaymentdetails">
+    <tr>
+      <th>Total tours handled this month</th>
+      <th>Tour's bills total</th>
+      <th>payment precentage (%)</th>
+      <th>Total payment</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+  
+
+</div>
+<!-- total payment show finish -->
+
+
         <div class="row mt-3" id="tour-details-pane">
 
            <div class="row" id="tour-details-topic">
@@ -104,14 +174,16 @@ echo "</div>";
            </div>
 
            <div class="row" id="tour-details-table">
-              <table class="table">
+              <table class="table" id="tourdetails">
+                <thead>
                   <tr>
                       <th>Bill no</th>
                       <th>Date</th>
                       <th>Bill value</th>
                       <th>time</th>
                   </tr>
-
+                  </thead>
+                  <tbody>
                   <?php
 
                     $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
@@ -131,6 +203,7 @@ echo "</div>";
                     echo "</tr>";
                     }
                   ?>
+                  </tbody>
               </table>
 
             
@@ -146,6 +219,10 @@ echo "</div>";
     
 </body>
 
+
+
+
+
 <script>
     const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -153,7 +230,59 @@ echo "</div>";
 
 const d = new Date();
 var text = "Tour Details : " + monthNames[d.getMonth()];
+var text1 = "Tour payment details : " + monthNames[d.getMonth()];
+
 
     document.getElementById("tourdetailsmonthname").innerHTML=text;
+    document.getElementById("tourpayment").innerHTML = text1;
+
+
+
+    // total find
+
+    var x = document.getElementById("tourdetails").tBodies[0].rows.length;
+    var table = document.getElementById("tourdetails");
+    document.getElementById("totalpaymentdetails").rows[1].cells[0].innerHTML = x;
+
+    var count = 0;
+
+   for(var i=1; i<=x; i++){
+
+    count = count + parseInt(table.rows[i].cells[2].innerHTML)
+
+   }
+
+   document.getElementById("totalpaymentdetails").rows[1].cells[1].innerHTML = count+".00";
+   
+  
+
+  //total find end
+
+  var position = document.getElementById("tabledetails").rows[3].cells[2].innerHTML;
+  var guide = document.getElementById("pre-table").rows[1].cells[1].innerHTML;
+  var rider = document.getElementById("pre-table").rows[2].cells[1].innerHTML;
+
+   if(position == "Guide"){
+
+    document.getElementById("totalpaymentdetails").rows[1].cells[2].innerHTML = guide;
+
+   }
+   if(position == "Boat Rider"){
+
+    document.getElementById("totalpaymentdetails").rows[1].cells[2].innerHTML = rider;
+
+}
+   
+  //calculate precentage
+
+var pre = parseInt(document.getElementById("totalpaymentdetails").rows[1].cells[2].innerHTML);
+  var precentage = pre.toFixed(1)
+   
+   var total = (count * precentage)/100;
+ 
+   document.getElementById("totalpaymentdetails").rows[1].cells[3].innerHTML = total+".00";
+
+
+
 </script>
 </html>

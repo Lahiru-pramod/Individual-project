@@ -319,6 +319,60 @@ if(isset($_POST['30mealbtn'])){
 
 };
 
+//employee payment changes
+
+if(isset($_POST['gpre'])){
+
+    
+
+    $pre=  mysqli_real_escape_string($connection, $_POST['gprece']);
+
+    $query= "UPDATE paymentpre SET presentage = '{$pre}' WHERE preID = 1";
+    
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+     // if successful
+    echo'<script> confirm("Do you want change guide payment precentage?");
+            </script>';
+
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+
+
+    };
+
+
+};
+
+if(isset($_POST['bpre'])){
+
+    
+
+    $pre=  mysqli_real_escape_string($connection, $_POST['bprece']);
+
+    $query= "UPDATE paymentpre SET presentage = '{$pre}' WHERE preID = 2";
+    
+
+    $result = mysqli_query($connection, $query);
+    if ($result){
+     // if successful
+    echo'<script> confirm("Do you want change boat rider payment precentage?");
+            </script>';
+
+
+    }else{
+
+       echo'<script> alert("Process is Falied, Please try again")</script>';
+
+
+    };
+
+
+};
+
 
 
 
@@ -708,6 +762,60 @@ if(isset($_POST['30mealbtn'])){
        </div>
 
 
+       <div class="row text-center mt-3 bg-dark" id="row4">
+        <h3 style="color: white;">- Guide & Boat riders payment precentage controll - </h3>
+    </div>
+
+    <div class="row pt-5 " id="row2-row1">
+
+    <div class="col" id="boxes"  >
+                <h3>Guide percentage (%)</h3> 
+
+                <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM paymentpre where preID=1";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h3 style='color:red;'>".$row['presentage']." </h3>";
+
+                };
+
+                
+                ?>
+                <form action="prices-changes-logged.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="gprece" placeholder="Change per.."><br>
+                <input type="submit" value="Change" id="change" name="gpre" ><br>
+                </form>
+
+            </div>
+
+
+            <div class="col" id="boxes"  >
+                <h3>Boat Rider percentage (%)</h3> 
+
+                <?php
+                
+                $connection = mysqli_connect('localhost', 'root', '', 'captaincruise');
+                $sql = "SELECT * FROM paymentpre where preID=2";
+                $result = mysqli_query($connection , $sql);
+                while($row = mysqli_fetch_array($result)){
+
+                echo"<h3 style='color:red;'>".$row['presentage']." </h3>";
+
+                };
+
+                
+                ?>
+                <form action="prices-changes-logged.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="bprece" placeholder="Change per.."><br>
+                <input type="submit" value="change" id="change" name="bpre" ><br>
+                </form>
+
+            </div>
+
+    </div>
 
 
     </div>

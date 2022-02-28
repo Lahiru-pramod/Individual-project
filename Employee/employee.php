@@ -234,13 +234,9 @@ if(isset($_POST['submit'])){
                     <td>
                         <select required name="position">
                             <option value="" disabled selected hidden>select..</option>
-                            <option value="Manager">Manager</option>
-                            <option value="Officer">Officer</option>
                             <option value="Guide">Guide</option>
                             <option value="Boat Rider">Boat Rider</option>
-                            <option value="Servent">Servent</option>
-                            <option value="Mechanic">Mechanic</option>
-
+                            
                         </select>
                     </td>
                 </tr>
