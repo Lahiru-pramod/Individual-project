@@ -56,7 +56,7 @@
                 </td>
                 <td id="menu-col2">
 
-                <h3>  <a href="#"> Boat repaires</a></h3>
+                <h3>  <a href="../expenses/expenses.php">expenses</a></h3>
 
                 </td>
 

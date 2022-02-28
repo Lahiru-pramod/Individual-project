@@ -1,0 +1,21 @@
+#main-topic {
+  background-color: burlywood;
+  text-align: center;
+  position: static;
+}
+
+#backlink {
+  text-decoration: none;
+  color: black;
+  width: 20%;
+  margin-left: 10px;
+  padding: 5px 3px;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+#backlink:hover {
+  color: white;
+  background: black;
+}
+/*# sourceMappingURL=expenses.css.map */
