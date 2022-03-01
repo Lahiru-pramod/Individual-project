@@ -69,7 +69,7 @@
                 </td>
                 <td id="menu-col2">
 
-                <h3>  <a href="#">Reports</a></h3>
+                <h3>  <a href="../report/report.php">Reports</a></h3>
 
                 </td>
 

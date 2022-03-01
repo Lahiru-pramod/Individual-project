@@ -1,6 +1,6 @@
 #main-topic{
 
-    background-color: burlywood;
+    background-color: rgb(127, 192, 147);
     text-align: center;
     position: static;
 }
@@ -20,7 +20,14 @@
     color: white;
     background:black;
 }
-#details-table{
+#summary{
 
+    border: 2px solid black;
+    padding-top: 3px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     
 }
