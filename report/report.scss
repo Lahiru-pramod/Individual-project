@@ -1,6 +1,6 @@
 #main-topic{
 
-    background-color: rgb(127, 192, 147);
+    background-color: rgb(255, 166, 0);
     text-align: center;
     position: static;
 }
@@ -20,14 +20,41 @@
     color: white;
     background:black;
 }
-#summary{
+#summary2{
 
-    border: 2px solid black;
+    border: 2px solid rgb(17, 0, 248);
     padding-top: 3px;
     border-radius: 10px;
     display: block;
     text-align: center;
     margin-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(255, 255, 255);
     
+}
+#summary2:hover{
+
+    box-shadow: rgb(8, 109, 216) 0px 20px 30px -10px;
+}
+#summary{
+
+    border: 2px solid rgb(231, 17, 17);
+    padding-top: 3px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(241, 241, 241);
+
+
+}
+#summary:hover{
+
+    box-shadow: rgb(206, 46, 46) 0px 20px 30px -10px;
+}
+#print{
+
+    width: 150px;
+    margin-left: 20px;
 }
